@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPL X</title>
+  <link rel="icon" href="Gambar kelas/Logo_RPL-removebg-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+  <style>
+    :root {
+      --navy: #0c1c3f;
+      --navy-soft: #122350;
+      --bg: #eef1f7;
+      --white: #ffffff;
+      --gold: #f5a623;
+      --blue: #2f5df0;
+      --red: #e5473b;
+      --text-dark: #1c2333;
+      --text-muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-dark);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(12, 28, 63, 0.08);
+    }
+
+
+    /* =========================
+   NAVBAR
+========================= */
+
+    .nav {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 78px;
+    }
+
+    .nav .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .nav .brand-text b {
+      display: block;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .nav .brand-text span {
+      display: block;
+      font-size: 12px;
+      color: #c7cfe6;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+
+    .nav ul a {
+      text-decoration: none;
+      opacity: 0.9;
+    }
+
+    .nav ul a:hover {
+      opacity: 1;
+      color: var(--gold);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      color: var(--white);
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+   HERO
+========================= */
+
+    .hero {
+      position: relative;
+      color: var(--white);
+
+      background:
+        linear-gradient(180deg,
+          rgba(6, 14, 34, 0.45),
+          rgba(6, 14, 34, 0.82)),
+        url("Gambar kelas/Kenangan\ 13.jpeg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      padding: 90px 0 130px;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.03em;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 800;
+      margin: 0 0 16px;
+    }
+
+    .hero p.quote {
+      font-size: 19px;
+      max-width: 46ch;
+      color: #e7eaf5;
+      margin: 0 0 32px;
+    }
+
+    .hero .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(47, 93, 240, 0.4);
+      margin-bottom: 34px;
+    }
+
+
+    /* =========================
+   AUDIO PLAYER
+========================= */
+
+    .audio-player {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      padding: 10px 18px;
+      max-width: 400px;
+      font-size: 13px;
+      color: #dfe4f2;
+    }
+
+    .play-btn {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.05);
+    }
+
+    #progress {
+      flex: 1;
+      height: 4px;
+      cursor: pointer;
+      accent-color: var(--white);
+    }
+
+    #time {
+      min-width: 35px;
+      white-space: nowrap;
+    }
+
+
+    /* =========================
+   STAT CARDS
+========================= */
+
+    .stats {
+      margin-top: -70px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .stats .wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat-card {
+      padding: 26px 20px;
+      text-align: center;
+    }
+
+    .stat-card .icon {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .stat-card .big {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .stat-card .small {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+
+    /* =========================
+   SECTION
+========================= */
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 800;
+      margin: 0 0 36px;
+    }
+
+    .section-title.center {
+      text-align: center;
+    }
+
+
+    /* =========================
+   PROFIL
+========================= */
+
+    .profil-card {
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .profil-card h2 {
+      color: var(--white);
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0 0 18px;
+    }
+
+    .profil-card p {
+      color: #c7cfe6;
+      font-size: 15.5px;
+      max-width: 52ch;
+    }
+
+    .value-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 22px;
+    }
+
+    .value-item .ic {
+      font-size: 20px;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .value-item b {
+      display: block;
+      font-size: 15.5px;
+      margin-bottom: 2px;
+    }
+
+    .value-item span {
+      font-size: 13.5px;
+      color: #c7cfe6;
+    }
+
+
+    /* =========================
+   STRUKTUR KELAS
+========================= */
+
+    .struktur-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .struktur-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .id-card {
+      padding: 16px;
+      width: 150px;
+      text-align: center;
+    }
+
+    .id-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+
+      border-radius: 12px;
+
+      background: var(--red);
+
+      display: block;
+
+      object-fit: cover;
+
+      margin-bottom: 12px;
+    }
+
+    .id-card b {
+      font-size: 14px;
+    }
+
+
+    /* =========================
+   GALERI KELAS
+========================= */
+
+    .galeri-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .galeri-grid .ph {
+      aspect-ratio: 4/3;
+
+      border-radius: 12px;
+
+      background: #d7dce8;
+
+      overflow: hidden;
+    }
+
+    .galeri-grid .ph img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+
+    /* =========================
+   BOTTOM CARD
+========================= */
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .bottom-card {
+      padding: 34px 26px;
+      min-height: 170px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .bottom-card.dark {
+      background: linear-gradient(135deg,
+          var(--navy),
+          #183166);
+
+      color: var(--white);
+    }
+
+    .bottom-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .bottom-card p {
+      margin: 0;
+      font-size: 13.5px;
+      opacity: 0.85;
+    }
+
+    .bottom-card ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 13.5px;
+    }
+
+    .bottom-card ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .bottom-card.dark ul li {
+      border-bottom-color: rgba(255, 255, 255, 0.12);
+    }
+
+
+    /* =========================
+   FOOTER
+========================= */
+
+    footer {
+      background: var(--navy);
+      color: #c7cfe6;
+      padding: 26px 0;
+      text-align: center;
+      font-size: 13.5px;
+    }
+
+
+    /* =========================
+   RESPONSIVE
+========================= */
+
+    @media (max-width:900px) {
+
+      .nav ul {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .stats .wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profil-card {
+        grid-template-columns: 1fr;
+      }
+
+      .galeri-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .struktur-row {
+        gap: 14px;
+      }
+
+      .id-card {
+        width: 120px;
+      }
+
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+     NAVBAR
+========================= -->
+
+  <nav class="nav">
+
+    <div class="wrap">
+
+      <div class="brand">
+
+        <div class="logo">
+          R
+        </div>
+
+        <div class="brand-text">
+
+          <b>12 RPL 2</b>
+
+          <span>
+            SMKN 12 Kabupaten Tangerang
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <ul>
+
+        <li>
+          <a href="#beranda">
+            Beranda
+          </a>
+        </li>
+
+        <li>
+          <a href="#profil">
+            Profil
+          </a>
+        </li>
+
+        <li>
+          <a href="#pengurus">
+            Pengurus
+          </a>
+        </li>
+
+        <li>
+          <a href="#galeri">
+            Galeri
+          </a>
+        </li>
+
+        <li>
+          <a href="#pengumuman">
+            Pengumuman
+          </a>
+        </li>
+
+        <li>
+          <a href="#prestasi">
+            Prestasi
+          </a>
+        </li>
+
+      </ul>
+
+
+      <button class="nav-toggle" aria-label="Menu">
+        ☰
+      </button>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================
+     HERO
+========================= -->
+
+  <header class="hero" id="beranda">
+
+    <div class="wrap">
+
+      <h1>
+        RPL <span>X</span>
+      </h1>
+
+      <div class="eyebrow">
+        SMKN 12 Kabupaten Tangerang
+      </div>
+
+      <p class="quote">
+        "Tumbuh Bersama, Berkarya, Wujudkan Masa Depan"
+      </p>
+
+      <a class="btn" href="#profil">
+        Tentang Kelas →
+      </a>
+
+
+      <div class="audio-player">
+
+        <button id="playBtn" class="play-btn" type="button">
+          ▶
+        </button>
+
+        <span id="time">0:00</span>
+
+        <input type="range" id="progress" min="0" max="100" value="0">
+
+        <audio id="music" loop>
+          <source src="Gambar kelas/Audio website.mp3" type="audio/mpeg">
+        </audio>
+
+      </div>
+
+
+  </header>
+
+
+
+  <!-- =========================
+     STATISTIK
+========================= -->
+
+  <div class="stats">
+
+    <div class="wrap">
+
+
+      <div class="stat-card card">
+
+        <div class="icon">
+          👥
+        </div>
+
+        <div class="big">
+          35
+        </div>
+
+        <div class="small">
+          Taruna/i
+        </div>
+
+      </div>
+
+
+      <div class="stat-card card">
+
+        <div class="icon">
+          🧑‍🏫
+        </div>
+
+        <div class="big">
+          Agatha Fery
+        </div>
+
+        <div class="small">
+          Wali Kelas
+        </div>
+
+      </div>
+
+
+      <div class="stat-card card">
+
+        <div class="icon">
+          📅
+        </div>
+
+        <div class="big">
+          2025/2026
+        </div>
+
+        <div class="small">
+          Tahun Ajaran
+        </div>
+
+      </div>
+
+
+      <div class="stat-card card">
+
+        <div class="icon">
+          <center><img src="Gambar kelas/Logo_RPL-removebg-preview.png" width="50px" height="50px" alt="Logo RPL">
+          </center>
+        </div>
+
+        <div class="big">
+          RPL
+        </div>
+
+        <div class="small">
+          Rekayasa Perangkat Lunak
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+     PROFIL
+========================= -->
+
+  <section id="profil">
+
+    <div class="wrap">
+
+      <div class="profil-card card">
+
+
+        <div>
+
+          <h2>
+            PROFIL KELAS
+          </h2>
+
+          <p>
+
+            RPL X adalah kelas yang penuh semangat,
+            kreativitas, dan kekompakan.
+
+            Satu langkah hari ini adalah awal dari
+            ribuan langkah di masa depan.
+
+            Kami belajar bukan hanya untuk mendapatkan
+            nilai, tetapi untuk berkembang, menciptakan
+            perubahan, dan meraih impian yang lebih besar.
+
+            Hari ini kami belajar, besok kami berkarya,
+            dan suatu saat nanti kami akan membuktikan
+            bahwa mimpi besar dimulai dari ruang kelas sederhana.
+
+          </p>
+
+        </div>
+
+
+        <div>
+
+
+          <div class="value-item">
+
+            <div class="ic">
+              👥
+            </div>
+
+            <div>
+
+              <b>
+                Kompak
+              </b>
+
+              <span>
+                Kebersamaan adalah kunci kekuatan kami
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="value-item">
+
+            <div class="ic">
+              🛡️
+            </div>
+
+            <div>
+
+              <b>
+                Disiplin
+              </b>
+
+              <span>
+                Disiplin hari ini, sukses di masa depan
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="value-item">
+
+            <div class="ic">
+              💡
+            </div>
+
+            <div>
+
+              <b>
+                Kreatif
+              </b>
+
+              <span>
+                Selalu berusaha menciptakan hal baru
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="value-item">
+
+            <div class="ic">
+              🏆
+            </div>
+
+            <div>
+
+              <b>
+                Berprestasi
+              </b>
+
+              <span>
+                Berusaha memberikan yang terbaik
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+     STRUKTUR KELAS
+========================= -->
+
+  <section id="pengurus">
+
+    <div class="wrap">
+
+      <h2 class="section-title center">
+        STRUKTUR KELAS RPL 2
+      </h2>
+
+
+      <div class="struktur-grid">
+
+
+        <!-- KETUA -->
+
+        <div class="struktur-row">
+
+          <div class="id-card card">
+
+            <img class="id-photo" src="Gambar kelas/Ketua kelas.jpeg" alt="Foto Ketua Kelas">
+
+            <b>
+              Alwan Ma'Arif
+            </b>
+
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
+              Ketua Kelas
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- WAKIL + BENDAHARA -->
+
+        <div class="struktur-row">
+
+
+          <div class="id-card card">
+
+            <img class="id-photo" src="Gambar kelas/struktur/wakil.jpg" alt="Foto Wakil Ketua">
+
+            <b>
+              Nama Siswa
+            </b>
+
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
+              Wakil Ketua
+            </div>
+
+          </div>
+
+
+          <div class="id-card card">
+
+            <img class="id-photo" src="Gambar kelas/struktur/bendahara.jpg" alt="Foto Bendahara">
+
+            <b>
+              Nama Siswa
+            </b>
+
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
+              Bendahara
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- SEKRETARIS + BENDAHARA -->
+
+        <div class="struktur-row">
+
+
+          <div class="id-card card">
+
+            <img class="id-photo" src="Gambar kelas/struktur/sekretaris1.jpg" alt="Foto Sekretaris 1">
+
+            <b>
+              Nama Siswa
+            </b>
+
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
+              Sekretaris 1
+            </div>
+
+          </div>
+
+
+          <div class="id-card card">
+
+            <img class="id-photo" src="Gambar kelas/struktur/sekretaris2.jpg" alt="Foto Sekretaris 2">
+
+            <b>
+              Nama Siswa
+            </b>
+
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
+              Sekretaris 2
+            </div>
+
+          </div>
+
+
+          <div class="id-card card">
+
+            <img class="id-photo" src="Gambar kelas/struktur/bendahara1.jpg" alt="Foto Bendahara 1">
+
+            <b>
+              Nama Siswa
+            </b>
+
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
+              Bendahara 1
+            </div>
+
+          </div>
+
+
+          <div class="id-card card">
+
+            <img class="id-photo" src="Gambar kelas/struktur/bendahara2.jpg" alt="Foto Bendahara 2">
+
+            <b>
+              Nama Siswa
+            </b>
+
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
+              Bendahara 2
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+     GALERI KELAS
+========================= -->
+
+  <section id="galeri">
+
+    <div class="wrap">
+
+      <h2 class="section-title">
+        GALERI KELAS
+      </h2>
+
+
+      <div class="galeri-grid">
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 1.jpeg" alt="Foto Kelas 1">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 2.jpeg" alt="Foto Kelas 2">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 3.jpeg" alt="Foto Kelas 3">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 4.jpeg" alt="Foto Kelas 4">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 5.jpeg" alt="Foto Kelas 5">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 6.jpeg" alt="Foto Kelas 6">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 7.jpeg" alt="Foto Kelas 7">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 8.jpeg" alt="Foto Kelas 8">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 9.jpeg" alt="Foto Kelas 9">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 10.jpeg" alt="Foto Kelas 10">
+        </div>
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 11.jpeg" alt="Foto Kelas 11">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 12.jpeg" height="150px" alt="Foto Kelas 12">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 13.jpeg" height="150px" alt="Foto Kelas 12">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 14.jpeg" height="150px" alt="Foto Kelas 12">
+        </div>
+
+
+        <div class="ph">
+          <img src="Gambar kelas/Kenangan 15.jpeg" height="150px" alt="Foto Kelas 12">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+     PENGUMUMAN + PRESTASI
+========================= -->
+
+  <section id="pengumuman">
+
+    <div class="wrap">
+
+      <div class="bottom-grid">
+
+
+        <div class="bottom-card dark card">
+
+          <h3>
+            Pengumuman Terbaru
+          </h3>
+
+          <ul>
+
+            <li>
+              Isi pengumuman terbaru di sini.
+            </li>
+
+            <li>
+              Isi pengumuman kedua di sini.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div class="bottom-card card" id="prestasi">
+
+          <h3>
+            Prestasi Kelas
+          </h3>
+
+          <ul>
+
+            <li>
+              Nama lomba / pencapaian kelas.
+            </li>
+
+            <li>
+              Nama lomba / pencapaian kelas.
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div class="bottom-card dark card">
+
+          <h3>
+            Ikuti Kami
+          </h3>
+
+          <p>
+            @namakelas
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+     FOOTER
+========================= -->
+
+  <footer>
+
+    © 2026 RPL 2 —
+    SMKN 12 Kabupaten Tangerang
+
+  </footer>
+
+
+
+  <!-- =========================
+     JAVASCRIPT MENU
+========================= -->
+
+  <script>
+
+    const toggle =
+      document.querySelector('.nav-toggle');
+
+    const navList =
+      document.querySelector('.nav ul');
+
+
+    toggle.addEventListener('click', () => {
+
+      const open =
+        navList.style.display === 'flex';
+
+      navList.style.display =
+        open ? 'none' : 'flex';
+
+      navList.style.flexDirection =
+        'column';
+
+      navList.style.position =
+        'absolute';
+
+      navList.style.top =
+        '78px';
+
+      navList.style.left =
+        '0';
+
+      navList.style.right =
+        '0';
+      navList.style.background =
+        'var(--navy)';
+      navList.style.padding =
+        '16px 32px';
+      navList.style.gap =
+        '14px';
+      navList.style.zIndex =
+        '20';
+    });
+
+
+    // =========================
+    // AUDIO PLAYER
+    // =========================
+
+    const music = document.getElementById("music");
+    const playBtn = document.getElementById("playBtn");
+    const progress = document.getElementById("progress");
+    const time = document.getElementById("time");
+
+    playBtn.addEventListener("click", () => {
+
+      if (music.paused) {
+        music.play();
+        playBtn.textContent = "❚❚";
+      } else {
+        music.pause();
+        playBtn.textContent = "▶";
+      }
+
+    });
+
+    music.addEventListener("timeupdate", () => {
+
+      if (music.duration) {
+        progress.value =
+          (music.currentTime / music.duration) * 100;
+      }
+
+      const minutes =
+        Math.floor(music.currentTime / 60);
+
+      const seconds =
+        Math.floor(music.currentTime % 60)
+          .toString()
+          .padStart(2, "0");
+
+      time.textContent =
+        `${minutes}:${seconds}`;
+
+    });
+
+    progress.addEventListener("input", () => {
+
+      if (music.duration) {
+        music.currentTime =
+          (progress.value / 100) * music.duration;
+      }
+
+    });
+
+    // MUSIK AKAN LOOP TERUS
+    music.loop = true;
+
+    music.play().then(() => {
+      playBtn.textContent = "❚❚";
+    }).catch(() => {
+      console.log("Autoplay diblokir browser.");
+    });
+  </script>
+</body>
+
+</html>
