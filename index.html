@@ -1,14 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>12 RPL 2</title>
+
   <link rel="icon" href="Logo_RPL-removebg-preview.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 
   <style>
     :root {
@@ -37,6 +40,7 @@
       color: var(--text-dark);
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -49,6 +53,7 @@
     }
 
     .wrap {
+      width: 100%;
       max-width: 1180px;
       margin: 0 auto;
       padding: 0 32px;
@@ -60,14 +65,15 @@
       box-shadow: 0 10px 30px rgba(12, 28, 63, 0.08);
     }
 
-
     /* =========================
-   NAVBAR
-========================= */
+       NAVBAR
+    ========================= */
 
     .nav {
+      position: relative;
       background: var(--navy);
       color: var(--white);
+      z-index: 100;
     }
 
     .nav .wrap {
@@ -90,8 +96,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      color: var(--navy);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .nav .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .nav .brand-text b {
@@ -109,6 +121,7 @@
     .nav ul {
       list-style: none;
       display: flex;
+      align-items: center;
       gap: 30px;
       margin: 0;
       padding: 0;
@@ -119,6 +132,7 @@
     .nav ul a {
       text-decoration: none;
       opacity: 0.9;
+      transition: 0.2s;
     }
 
     .nav ul a:hover {
@@ -131,14 +145,13 @@
       background: none;
       border: 0;
       color: var(--white);
-      font-size: 22px;
+      font-size: 25px;
       cursor: pointer;
     }
 
-
     /* =========================
-   HERO
-========================= */
+       HERO
+    ========================= */
 
     .hero {
       position: relative;
@@ -168,6 +181,7 @@
     .hero h1 {
       font-size: clamp(48px, 7vw, 88px);
       font-weight: 800;
+      line-height: 1;
       margin: 0 0 16px;
     }
 
@@ -191,12 +205,16 @@
       text-decoration: none;
       box-shadow: 0 8px 20px rgba(47, 93, 240, 0.4);
       margin-bottom: 34px;
+      transition: 0.2s;
     }
 
+    .hero .btn:hover {
+      transform: translateY(-2px);
+    }
 
     /* =========================
-   AUDIO PLAYER
-========================= */
+       AUDIO PLAYER
+    ========================= */
 
     .audio-player {
       display: flex;
@@ -206,6 +224,7 @@
       border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 999px;
       padding: 10px 18px;
+      width: 100%;
       max-width: 400px;
       font-size: 13px;
       color: #dfe4f2;
@@ -232,6 +251,7 @@
 
     #progress {
       flex: 1;
+      min-width: 0;
       height: 4px;
       cursor: pointer;
       accent-color: var(--white);
@@ -242,10 +262,9 @@
       white-space: nowrap;
     }
 
-
     /* =========================
-   STAT CARDS
-========================= */
+       STAT CARDS
+    ========================= */
 
     .stats {
       margin-top: -70px;
@@ -262,16 +281,27 @@
     .stat-card {
       padding: 26px 20px;
       text-align: center;
+      min-width: 0;
     }
 
     .stat-card .icon {
       font-size: 26px;
       margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stat-card .icon img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
     }
 
     .stat-card .big {
       font-size: 22px;
       font-weight: 700;
+      word-break: break-word;
     }
 
     .stat-card .small {
@@ -280,10 +310,9 @@
       margin-top: 2px;
     }
 
-
     /* =========================
-   SECTION
-========================= */
+       SECTION
+    ========================= */
 
     section {
       padding: 80px 0;
@@ -299,10 +328,9 @@
       text-align: center;
     }
 
-
     /* =========================
-   PROFIL
-========================= */
+       PROFIL
+    ========================= */
 
     .profil-card {
       padding: 48px;
@@ -337,6 +365,7 @@
       font-size: 20px;
       color: var(--gold);
       margin-top: 2px;
+      flex-shrink: 0;
     }
 
     .value-item b {
@@ -350,10 +379,9 @@
       color: #c7cfe6;
     }
 
-
     /* =========================
-   STRUKTUR KELAS
-========================= */
+       STRUKTUR KELAS
+    ========================= */
 
     .struktur-grid {
       display: flex;
@@ -377,27 +405,22 @@
 
     .id-photo {
       width: 100%;
-      aspect-ratio: 3/4;
-
+      aspect-ratio: 3 / 4;
       border-radius: 12px;
-
       background: var(--red);
-
       display: block;
-
       object-fit: cover;
-
       margin-bottom: 12px;
     }
 
     .id-card b {
       font-size: 14px;
+      display: block;
     }
 
-
     /* =========================
-   GALERI KELAS
-========================= */
+       GALERI
+    ========================= */
 
     .galeri-grid {
       display: grid;
@@ -406,28 +429,27 @@
     }
 
     .galeri-grid .ph {
-      aspect-ratio: 4/3;
-
+      aspect-ratio: 4 / 3;
       border-radius: 12px;
-
       background: #d7dce8;
-
       overflow: hidden;
     }
 
     .galeri-grid .ph img {
       width: 100%;
       height: 100%;
-
       object-fit: cover;
-
       display: block;
+      transition: transform 0.3s ease;
     }
 
+    .galeri-grid .ph:hover img {
+      transform: scale(1.05);
+    }
 
     /* =========================
-   BOTTOM CARD
-========================= */
+       BOTTOM CARD
+    ========================= */
 
     .bottom-grid {
       display: grid;
@@ -438,7 +460,6 @@
     .bottom-card {
       padding: 34px 26px;
       min-height: 170px;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -448,7 +469,6 @@
       background: linear-gradient(135deg,
           var(--navy),
           #183166);
-
       color: var(--white);
     }
 
@@ -480,10 +500,9 @@
       border-bottom-color: rgba(255, 255, 255, 0.12);
     }
 
-
     /* =========================
-   FOOTER
-========================= */
+       FOOTER
+    ========================= */
 
     footer {
       background: var(--navy);
@@ -493,57 +512,570 @@
       font-size: 13.5px;
     }
 
+    /* =========================
+       COVER / INTRO
+    ========================= */
+
+    body.intro-open {
+      overflow: hidden;
+    }
+
+    .intro-slide {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      color: var(--white);
+
+      background:
+        linear-gradient(180deg,
+          rgba(6, 14, 34, 0.45),
+          rgba(6, 14, 34, 0.90)),
+        url("Kenangan 13.jpeg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transition:
+        transform 0.9s cubic-bezier(0.77, 0, 0.175, 1),
+        opacity 0.9s ease;
+    }
+
+    .intro-slide.hide {
+      transform: translateX(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .intro-content {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .intro-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 22px;
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
+    }
+
+    .intro-kicker {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      margin: 0 0 8px;
+    }
+
+    .intro-content h1 {
+      font-size: clamp(52px, 9vw, 100px);
+      line-height: 1;
+      margin: 0 0 14px;
+      font-weight: 800;
+      text-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .intro-content p {
+      color: #e7eaf5;
+      font-size: 17px;
+      margin: 0 0 34px;
+    }
+
+    .enter-btn {
+      border: none;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 14px 32px;
+      border-radius: 999px;
+      cursor: pointer;
+
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .enter-btn:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.4);
+    }
 
     /* =========================
-   RESPONSIVE
-========================= */
+       TABLET
+    ========================= */
 
-    @media (max-width:900px) {
+    @media (max-width: 900px) {
+
+      .wrap {
+        padding: 0 24px;
+      }
+
+      /* NAVBAR */
 
       .nav ul {
         display: none;
+
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 0;
+
+        background: var(--navy);
+
+        padding: 10px 24px 20px;
+
+        box-shadow:
+          0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav ul.show {
+        display: flex;
+      }
+
+      .nav ul li {
+        width: 100%;
+      }
+
+      .nav ul a {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
       }
 
       .nav-toggle {
         display: block;
       }
 
+      /* HERO */
+
+      .hero {
+        padding: 70px 0 110px;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 9vw, 70px);
+      }
+
+      /* STAT */
+
       .stats .wrap {
         grid-template-columns: repeat(2, 1fr);
       }
 
+      /* PROFIL */
+
       .profil-card {
         grid-template-columns: 1fr;
+        padding: 36px;
+        gap: 25px;
       }
 
+      /* GALERI */
+
       .galeri-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
+
+      /* BOTTOM */
 
       .bottom-grid {
         grid-template-columns: 1fr;
       }
+
+      /* STRUKTUR */
 
       .struktur-row {
         gap: 14px;
       }
 
       .id-card {
-        width: 120px;
+        width: 135px;
+      }
+    }
+
+    /* =========================
+       HP
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
       }
 
+      .wrap {
+        width: 100%;
+        padding: 0 16px;
+      }
+
+      /* NAVBAR */
+
+      .nav .wrap {
+        height: 68px;
+        padding: 0 16px;
+      }
+
+      .nav .logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .nav .brand {
+        gap: 10px;
+      }
+
+      .nav .brand-text b {
+        font-size: 15px;
+      }
+
+      .nav .brand-text span {
+        font-size: 9px;
+      }
+
+      .nav-toggle {
+        font-size: 24px;
+      }
+
+      .nav ul {
+        top: 68px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      /* HERO */
+
+      .hero {
+        padding: 60px 0 100px;
+
+        background-position: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(40px, 14vw, 60px);
+        line-height: 1.05;
+      }
+
+      .hero .eyebrow {
+        font-size: 12px;
+      }
+
+      .hero p.quote {
+        font-size: 15px;
+        max-width: 100%;
+      }
+
+      .hero .btn {
+        padding: 12px 20px;
+        font-size: 13px;
+      }
+
+      /* AUDIO */
+
+      .audio-player {
+        width: 100%;
+        max-width: 100%;
+        padding: 9px 14px;
+      }
+
+      /* STAT */
+
+      .stats {
+        margin-top: -55px;
+      }
+
+      .stats .wrap {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .stat-card {
+        padding: 18px 8px;
+        border-radius: 14px;
+      }
+
+      .stat-card .icon {
+        font-size: 22px;
+      }
+
+      .stat-card .icon img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .stat-card .big {
+        font-size: 15px;
+      }
+
+      .stat-card .small {
+        font-size: 9.5px;
+        line-height: 1.4;
+      }
+
+      /* SECTION */
+
+      section {
+        padding: 55px 0;
+      }
+
+      .section-title {
+        font-size: 23px;
+        margin-bottom: 25px;
+      }
+
+      /* PROFIL */
+
+      .profil-card {
+        padding: 28px 22px;
+        border-radius: 14px;
+      }
+
+      .profil-card h2 {
+        font-size: 23px;
+      }
+
+      .profil-card p {
+        font-size: 13.5px;
+      }
+
+      .value-item {
+        gap: 10px;
+        margin-bottom: 17px;
+      }
+
+      .value-item .ic {
+        font-size: 18px;
+      }
+
+      .value-item b {
+        font-size: 14px;
+      }
+
+      .value-item span {
+        font-size: 12px;
+      }
+
+      /* STRUKTUR */
+
+      .struktur-grid {
+        gap: 14px;
+      }
+
+      .struktur-row {
+        width: 100%;
+        gap: 10px;
+      }
+
+      .id-card {
+        width: 135px;
+        padding: 10px;
+        border-radius: 14px;
+      }
+
+      .id-photo {
+        border-radius: 9px;
+        margin-bottom: 9px;
+      }
+
+      .id-card b {
+        font-size: 12px;
+      }
+
+      .id-card .small {
+        font-size: 10px !important;
+      }
+
+      /* GALERI */
+
+      .galeri-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .galeri-grid .ph {
+        border-radius: 9px;
+      }
+
+      /* BOTTOM */
+
+      .bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .bottom-card {
+        padding: 25px 20px;
+        min-height: 140px;
+      }
+
+      .bottom-card h3 {
+        font-size: 16px;
+      }
+
+      .bottom-card p,
+      .bottom-card ul {
+        font-size: 12px;
+      }
+
+      /* COVER */
+
+      .intro-content {
+        padding: 20px;
+      }
+
+      .intro-logo {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 18px;
+      }
+
+      .intro-kicker {
+        font-size: 11px;
+      }
+
+      .intro-content h1 {
+        font-size: clamp(45px, 15vw, 70px);
+      }
+
+      .intro-content p {
+        font-size: 13px;
+        margin-bottom: 28px;
+      }
+
+      .enter-btn {
+        padding: 12px 25px;
+        font-size: 13px;
+      }
+
+      /* FOOTER */
+
+      footer {
+        padding: 22px 16px;
+        font-size: 11px;
+      }
+    }
+
+    /* =========================
+       HP KECIL
+    ========================= */
+
+    @media (max-width: 380px) {
+
+      .wrap {
+        padding: 0 12px;
+      }
+
+      .nav .brand-text b {
+        font-size: 14px;
+      }
+
+      .nav .brand-text span {
+        font-size: 8px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p.quote {
+        font-size: 14px;
+      }
+
+      .stats .wrap {
+        gap: 8px;
+      }
+
+      .stat-card {
+        padding: 15px 6px;
+      }
+
+      .stat-card .big {
+        font-size: 13px;
+      }
+
+      .stat-card .small {
+        font-size: 8.5px;
+      }
+
+      .id-card {
+        width: 125px;
+      }
+
+      .galeri-grid {
+        gap: 6px;
+      }
+
+      .profil-card {
+        padding: 24px 18px;
+      }
     }
   </style>
-
 </head>
 
 
-<body>
+<body class="intro-open">
+
+  <!-- =========================
+       COVER DEPAN
+  ========================= -->
+
+  <section class="intro-slide" id="intro">
+
+    <div class="intro-content">
+
+      <img class="intro-logo" src="Logo kelas.png" alt="Logo Kelas">
+
+      <div class="intro-kicker">
+        WEBSITE KELAS
+      </div>
+
+      <h1>
+        12 RPL 2
+      </h1>
+
+      <p>
+        SMKN 12 Kabupaten Tangerang
+      </p>
+
+      <button id="enterBtn" class="enter-btn" type="button">
+        MASUK →
+      </button>
+
+    </div>
+
+  </section>
 
 
   <!-- =========================
-     NAVBAR
-========================= -->
+       NAVBAR
+  ========================= -->
 
   <nav class="nav">
 
@@ -552,12 +1084,14 @@
       <div class="brand">
 
         <div class="logo">
-          <img src="Logo kelas.png">
+          <img src="Logo kelas.png" alt="Logo 12 RPL 2">
         </div>
 
         <div class="brand-text">
 
-          <b>12 RPL 2</b>
+          <b>
+            12 RPL 2
+          </b>
 
           <span>
             SMKN 12 Kabupaten Tangerang
@@ -568,7 +1102,7 @@
       </div>
 
 
-      <ul>
+      <ul id="navList">
 
         <li>
           <a href="#beranda">
@@ -609,7 +1143,7 @@
       </ul>
 
 
-      <button class="nav-toggle" aria-label="Menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" type="button">
         ☰
       </button>
 
@@ -618,10 +1152,9 @@
   </nav>
 
 
-
   <!-- =========================
-     HERO
-========================= -->
+       HERO
+  ========================= -->
 
   <header class="hero" id="beranda">
 
@@ -644,13 +1177,17 @@
       </a>
 
 
+      <!-- AUDIO -->
+
       <div class="audio-player">
 
         <button id="playBtn" class="play-btn" type="button">
           ▶
         </button>
 
-        <span id="time">0:00</span>
+        <span id="time">
+          0:00
+        </span>
 
         <input type="range" id="progress" min="0" max="100" value="0">
 
@@ -660,19 +1197,18 @@
 
       </div>
 
+    </div>
 
   </header>
 
 
-
   <!-- =========================
-     STATISTIK
-========================= -->
+       STATISTIK
+  ========================= -->
 
   <div class="stats">
 
     <div class="wrap">
-
 
       <div class="stat-card card">
 
@@ -728,8 +1264,9 @@
       <div class="stat-card card">
 
         <div class="icon">
-          <center><img src="Logo_RPL-removebg-preview.png" width="50px" height="50px" alt="Logo RPL">
-          </center>
+
+          <img src="Logo_RPL-removebg-preview.png" alt="Logo RPL">
+
         </div>
 
         <div class="big">
@@ -742,23 +1279,20 @@
 
       </div>
 
-
     </div>
 
   </div>
 
 
-
   <!-- =========================
-     PROFIL
-========================= -->
+       PROFIL
+  ========================= -->
 
   <section id="profil">
 
     <div class="wrap">
 
       <div class="profil-card card">
-
 
         <div>
 
@@ -767,7 +1301,6 @@
           </h2>
 
           <p>
-
             RPL X adalah kelas yang penuh semangat,
             kreativitas, dan kekompakan.
 
@@ -781,14 +1314,12 @@
             Hari ini kami belajar, besok kami berkarya,
             dan suatu saat nanti kami akan membuktikan
             bahwa mimpi besar dimulai dari ruang kelas sederhana.
-
           </p>
 
         </div>
 
 
         <div>
-
 
           <div class="value-item">
 
@@ -873,7 +1404,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -883,10 +1413,9 @@
   </section>
 
 
-
   <!-- =========================
-     STRUKTUR KELAS
-========================= -->
+       STRUKTUR KELAS
+  ========================= -->
 
   <section id="pengurus">
 
@@ -921,11 +1450,9 @@
         </div>
 
 
-
         <!-- WAKIL + BENDAHARA -->
 
         <div class="struktur-row">
-
 
           <div class="id-card card">
 
@@ -956,15 +1483,12 @@
 
           </div>
 
-
         </div>
-
 
 
         <!-- SEKRETARIS + BENDAHARA -->
 
         <div class="struktur-row">
-
 
           <div class="id-card card">
 
@@ -1025,7 +1549,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -1035,10 +1558,9 @@
   </section>
 
 
-
   <!-- =========================
-     GALERI KELAS
-========================= -->
+       GALERI
+  ========================= -->
 
   <section id="galeri">
 
@@ -1051,51 +1573,41 @@
 
       <div class="galeri-grid">
 
-
         <div class="ph">
           <img src="Kenangan 1.jpeg" alt="Foto Kelas 1">
         </div>
-
 
         <div class="ph">
           <img src="Kenangan 2.jpeg" alt="Foto Kelas 2">
         </div>
 
-
         <div class="ph">
           <img src="Kenangan 3.jpeg" alt="Foto Kelas 3">
         </div>
-
 
         <div class="ph">
           <img src="Kenangan 4.jpeg" alt="Foto Kelas 4">
         </div>
 
-
         <div class="ph">
           <img src="Kenangan 5.jpeg" alt="Foto Kelas 5">
         </div>
-
 
         <div class="ph">
           <img src="Kenangan 6.jpeg" alt="Foto Kelas 6">
         </div>
 
-
         <div class="ph">
           <img src="Kenangan 7.jpeg" alt="Foto Kelas 7">
         </div>
-
 
         <div class="ph">
           <img src="Kenangan 8.jpeg" alt="Foto Kelas 8">
         </div>
 
-
         <div class="ph">
           <img src="Kenangan 9.jpeg" alt="Foto Kelas 9">
         </div>
-
 
         <div class="ph">
           <img src="Kenangan 10.jpeg" alt="Foto Kelas 10">
@@ -1105,24 +1617,20 @@
           <img src="Kenangan 11.jpeg" alt="Foto Kelas 11">
         </div>
 
-
         <div class="ph">
-          <img src="Kenangan 12.jpeg" height="150px" alt="Foto Kelas 12">
+          <img src="Kenangan 12.jpeg" alt="Foto Kelas 12">
         </div>
 
-
         <div class="ph">
-          <img src="Kenangan 16.jpeg" height="150px" alt="Foto Kelas 12">
+          <img src="Kenangan 16.jpeg" alt="Foto Kelas 13">
         </div>
 
-
         <div class="ph">
-          <img src="Kenangan 14.jpeg" height="150px" alt="Foto Kelas 12">
+          <img src="Kenangan 14.jpeg" alt="Foto Kelas 14">
         </div>
 
-
         <div class="ph">
-          <img src="Kenangan 15.jpeg" height="150px" alt="Foto Kelas 12">
+          <img src="Kenangan 15.jpeg" alt="Foto Kelas 15">
         </div>
 
       </div>
@@ -1132,10 +1640,9 @@
   </section>
 
 
-
   <!-- =========================
-     PENGUMUMAN + PRESTASI
-========================= -->
+       PENGUMUMAN + PRESTASI
+  ========================= -->
 
   <section id="pengumuman">
 
@@ -1165,7 +1672,6 @@
         </div>
 
 
-
         <div class="bottom-card card" id="prestasi">
 
           <h3>
@@ -1187,7 +1693,6 @@
         </div>
 
 
-
         <div class="bottom-card dark card">
 
           <h3>
@@ -1200,7 +1705,6 @@
 
         </div>
 
-
       </div>
 
     </div>
@@ -1208,10 +1712,9 @@
   </section>
 
 
-
   <!-- =========================
-     FOOTER
-========================= -->
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -1221,112 +1724,175 @@
   </footer>
 
 
-
   <!-- =========================
-     JAVASCRIPT MENU
-========================= -->
+       JAVASCRIPT
+  ========================= -->
 
   <script>
 
-    const toggle =
-      document.querySelector('.nav-toggle');
+    /* =========================
+       NAVBAR MOBILE
+    ========================= */
+
+    const navToggle =
+      document.getElementById("navToggle");
 
     const navList =
-      document.querySelector('.nav ul');
+      document.getElementById("navList");
 
 
-    toggle.addEventListener('click', () => {
+    navToggle.addEventListener("click", () => {
 
-      const open =
-        navList.style.display === 'flex';
+      navList.classList.toggle("show");
 
-      navList.style.display =
-        open ? 'none' : 'flex';
-
-      navList.style.flexDirection =
-        'column';
-
-      navList.style.position =
-        'absolute';
-
-      navList.style.top =
-        '78px';
-
-      navList.style.left =
-        '0';
-
-      navList.style.right =
-        '0';
-      navList.style.background =
-        'var(--navy)';
-      navList.style.padding =
-        '16px 32px';
-      navList.style.gap =
-        '14px';
-      navList.style.zIndex =
-        '20';
     });
 
 
-    // =========================
-    // AUDIO PLAYER
-    // =========================
+    /* Tutup menu setelah klik */
+    document.querySelectorAll(".nav ul a").forEach(link => {
 
-    const music = document.getElementById("music");
-    const playBtn = document.getElementById("playBtn");
-    const progress = document.getElementById("progress");
-    const time = document.getElementById("time");
+      link.addEventListener("click", () => {
+
+        navList.classList.remove("show");
+
+      });
+
+    });
+
+
+    /* =========================
+       AUDIO PLAYER
+    ========================= */
+
+    const music =
+      document.getElementById("music");
+
+    const playBtn =
+      document.getElementById("playBtn");
+
+    const progress =
+      document.getElementById("progress");
+
+    const time =
+      document.getElementById("time");
+
 
     playBtn.addEventListener("click", () => {
 
       if (music.paused) {
+
         music.play();
+
         playBtn.textContent = "❚❚";
+
       } else {
+
         music.pause();
+
         playBtn.textContent = "▶";
+
       }
 
     });
 
+
     music.addEventListener("timeupdate", () => {
 
       if (music.duration) {
+
         progress.value =
           (music.currentTime / music.duration) * 100;
+
       }
+
 
       const minutes =
         Math.floor(music.currentTime / 60);
+
 
       const seconds =
         Math.floor(music.currentTime % 60)
           .toString()
           .padStart(2, "0");
 
+
       time.textContent =
         `${minutes}:${seconds}`;
 
     });
 
+
     progress.addEventListener("input", () => {
 
       if (music.duration) {
+
         music.currentTime =
-          (progress.value / 100) * music.duration;
+          (progress.value / 100) *
+          music.duration;
+
       }
 
     });
 
-    // MUSIK AKAN LOOP TERUS
+
     music.loop = true;
 
-    music.play().then(() => {
-      playBtn.textContent = "❚❚";
-    }).catch(() => {
-      console.log("Autoplay diblokir browser.");
+
+    /* =========================
+       COVER -> WEBSITE
+    ========================= */
+
+    const enterBtn =
+      document.getElementById("enterBtn");
+
+    const intro =
+      document.getElementById("intro");
+
+
+    enterBtn.addEventListener("click", () => {
+
+      /* Mulai musik */
+
+      music.play()
+        .then(() => {
+
+          playBtn.textContent = "❚❚";
+
+        })
+        .catch(() => {
+
+          console.log(
+            "Musik belum dapat diputar."
+          );
+
+        });
+
+
+      /* Geser cover ke kiri */
+
+      intro.classList.add("hide");
+
+
+      /* Aktifkan scroll */
+
+      document.body.classList.remove(
+        "intro-open"
+      );
+
+
+      /* Hapus cover */
+
+      setTimeout(() => {
+
+        intro.remove();
+
+      }, 900);
+
     });
+
   </script>
+
 </body>
 
 </html>
+```
