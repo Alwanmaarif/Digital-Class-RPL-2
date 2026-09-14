@@ -64,6 +64,7 @@
       box-shadow: 0 10px 30px rgba(12, 28, 63, 0.08);
     }
 
+
     /* =========================
        NAVBAR
     ========================= */
@@ -148,22 +149,31 @@
       cursor: pointer;
     }
 
+
     /* =========================
        HERO
+       BACKGROUND RESPONSIVE
     ========================= */
 
     .hero {
       position: relative;
+      min-height: calc(100dvh - 78px);
+
+      display: flex;
+      align-items: center;
+
       color: var(--white);
 
-      background:
-        linear-gradient(180deg,
+      background-image:
+        linear-gradient(
+          180deg,
           rgba(6, 14, 34, 0.45),
-          rgba(6, 14, 34, 0.82)),
+          rgba(6, 14, 34, 0.82)
+        ),
         url("Kenangan 13.jpeg");
 
       background-size: cover;
-      background-position: center;
+      background-position: center center;
       background-repeat: no-repeat;
 
       padding: 90px 0 130px;
@@ -210,6 +220,7 @@
     .hero .btn:hover {
       transform: translateY(-2px);
     }
+
 
     /* =========================
        AUDIO PLAYER
@@ -261,6 +272,7 @@
       white-space: nowrap;
     }
 
+
     /* =========================
        STAT CARDS
     ========================= */
@@ -309,6 +321,7 @@
       margin-top: 2px;
     }
 
+
     /* =========================
        SECTION
     ========================= */
@@ -326,6 +339,7 @@
     .section-title.center {
       text-align: center;
     }
+
 
     /* =========================
        PROFIL
@@ -378,6 +392,7 @@
       color: #c7cfe6;
     }
 
+
     /* =========================
        STRUKTUR KELAS
     ========================= */
@@ -417,6 +432,7 @@
       display: block;
     }
 
+
     /* =========================
        GALERI
     ========================= */
@@ -446,6 +462,7 @@
       transform: scale(1.05);
     }
 
+
     /* =========================
        BOTTOM CARD
     ========================= */
@@ -465,9 +482,11 @@
     }
 
     .bottom-card.dark {
-      background: linear-gradient(135deg,
-          var(--navy),
-          #183166);
+      background: linear-gradient(
+        135deg,
+        var(--navy),
+        #183166
+      );
       color: var(--white);
     }
 
@@ -499,6 +518,7 @@
       border-bottom-color: rgba(255, 255, 255, 0.12);
     }
 
+
     /* =========================
        FOOTER
     ========================= */
@@ -511,8 +531,10 @@
       font-size: 13.5px;
     }
 
+
     /* =========================
        COVER / INTRO
+       FULL SCREEN RESPONSIVE
     ========================= */
 
     body.intro-open {
@@ -522,6 +544,10 @@
     .intro-slide {
       position: fixed;
       inset: 0;
+
+      width: 100%;
+      height: 100dvh;
+
       z-index: 9999;
 
       display: flex;
@@ -531,14 +557,16 @@
       text-align: center;
       color: var(--white);
 
-      background:
-        linear-gradient(180deg,
+      background-image:
+        linear-gradient(
+          180deg,
           rgba(6, 14, 34, 0.45),
-          rgba(6, 14, 34, 0.90)),
+          rgba(6, 14, 34, 0.90)
+        ),
         url("Kenangan 13.jpeg");
 
       background-size: cover;
-      background-position: center;
+      background-position: center center;
       background-repeat: no-repeat;
 
       transition:
@@ -567,7 +595,9 @@
       height: 120px;
       object-fit: contain;
       margin-bottom: 22px;
-      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
+      filter: drop-shadow(
+        0 8px 20px rgba(0, 0, 0, 0.35)
+      );
     }
 
     .intro-kicker {
@@ -619,6 +649,7 @@
         0 14px 35px rgba(0, 0, 0, 0.4);
     }
 
+
     /* =========================
        TABLET
     ========================= */
@@ -628,6 +659,7 @@
       .wrap {
         padding: 0 24px;
       }
+
 
       /* NAVBAR */
 
@@ -672,21 +704,29 @@
         display: block;
       }
 
+
       /* HERO */
 
       .hero {
+        min-height: calc(100dvh - 78px);
+
         padding: 70px 0 110px;
+
+        background-size: cover;
+        background-position: center center;
       }
 
       .hero h1 {
         font-size: clamp(42px, 9vw, 70px);
       }
 
+
       /* STAT */
 
       .stats .wrap {
         grid-template-columns: repeat(2, 1fr);
       }
+
 
       /* PROFIL */
 
@@ -696,17 +736,20 @@
         gap: 25px;
       }
 
+
       /* GALERI */
 
       .galeri-grid {
         grid-template-columns: repeat(3, 1fr);
       }
 
+
       /* BOTTOM */
 
       .bottom-grid {
         grid-template-columns: 1fr;
       }
+
 
       /* STRUKTUR */
 
@@ -717,7 +760,19 @@
       .id-card {
         width: 135px;
       }
+
+
+      /* INTRO */
+
+      .intro-slide {
+        width: 100%;
+        height: 100dvh;
+
+        background-size: cover;
+        background-position: center center;
+      }
     }
+
 
     /* =========================
        HP
@@ -734,6 +789,7 @@
         width: 100%;
         padding: 0 16px;
       }
+
 
       /* NAVBAR */
 
@@ -769,12 +825,16 @@
         padding-right: 16px;
       }
 
+
       /* HERO */
 
       .hero {
+        min-height: calc(100dvh - 68px);
+
         padding: 60px 0 100px;
 
-        background-position: center;
+        background-size: cover;
+        background-position: center center;
       }
 
       .hero h1 {
@@ -796,6 +856,7 @@
         font-size: 13px;
       }
 
+
       /* AUDIO */
 
       .audio-player {
@@ -803,6 +864,7 @@
         max-width: 100%;
         padding: 9px 14px;
       }
+
 
       /* STAT */
 
@@ -838,6 +900,7 @@
         line-height: 1.4;
       }
 
+
       /* SECTION */
 
       section {
@@ -848,6 +911,7 @@
         font-size: 23px;
         margin-bottom: 25px;
       }
+
 
       /* PROFIL */
 
@@ -881,6 +945,7 @@
         font-size: 12px;
       }
 
+
       /* STRUKTUR */
 
       .struktur-grid {
@@ -911,6 +976,7 @@
         font-size: 10px !important;
       }
 
+
       /* GALERI */
 
       .galeri-grid {
@@ -921,6 +987,7 @@
       .galeri-grid .ph {
         border-radius: 9px;
       }
+
 
       /* BOTTOM */
 
@@ -943,7 +1010,16 @@
         font-size: 12px;
       }
 
+
       /* COVER */
+
+      .intro-slide {
+        width: 100%;
+        height: 100dvh;
+
+        background-size: cover;
+        background-position: center center;
+      }
 
       .intro-content {
         padding: 20px;
@@ -973,6 +1049,7 @@
         font-size: 13px;
       }
 
+
       /* FOOTER */
 
       footer {
@@ -980,6 +1057,7 @@
         font-size: 11px;
       }
     }
+
 
     /* =========================
        HP KECIL
@@ -997,6 +1075,13 @@
 
       .nav .brand-text span {
         font-size: 8px;
+      }
+
+      .hero {
+        min-height: calc(100dvh - 68px);
+
+        background-size: cover;
+        background-position: center center;
       }
 
       .hero h1 {
@@ -1034,12 +1119,19 @@
       .profil-card {
         padding: 24px 18px;
       }
+
+      .intro-slide {
+        height: 100dvh;
+        background-size: cover;
+        background-position: center center;
+      }
     }
   </style>
 </head>
 
 
 <body class="intro-open">
+
 
   <!-- =========================
        COVER DEPAN
@@ -1049,7 +1141,10 @@
 
     <div class="intro-content">
 
-      <img class="intro-logo" src="Logo kelas.png" alt="Logo Kelas">
+      <img
+        class="intro-logo"
+        src="Logo kelas.png"
+        alt="Logo Kelas">
 
       <div class="intro-kicker">
         WEBSITE KELAS
@@ -1063,7 +1158,10 @@
         SMKN 12 Kabupaten Tangerang
       </p>
 
-      <button id="enterBtn" class="enter-btn" type="button">
+      <button
+        id="enterBtn"
+        class="enter-btn"
+        type="button">
         MASUK →
       </button>
 
@@ -1083,7 +1181,9 @@
       <div class="brand">
 
         <div class="logo">
-          <img src="Logo kelas.png" alt="Logo 12 RPL 2">
+          <img
+            src="Logo kelas.png"
+            alt="Logo 12 RPL 2">
         </div>
 
         <div class="brand-text">
@@ -1142,7 +1242,11 @@
       </ul>
 
 
-      <button class="nav-toggle" id="navToggle" aria-label="Menu" type="button">
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Menu"
+        type="button">
         ☰
       </button>
 
@@ -1159,19 +1263,21 @@
 
     <div class="wrap">
 
-      <h1>
-        12 RPL 2
-      </h1>
-
       <div class="eyebrow">
         SMKN 12 Kabupaten Tangerang
       </div>
+
+      <h1>
+        12 RPL 2
+      </h1>
 
       <p class="quote">
         "Tumbuh Bersama, Berkarya, Wujudkan Masa Depan"
       </p>
 
-      <a class="btn" href="#profil">
+      <a
+        class="btn"
+        href="#profil">
         Tentang Kelas →
       </a>
 
@@ -1180,7 +1286,10 @@
 
       <div class="audio-player">
 
-        <button id="playBtn" class="play-btn" type="button">
+        <button
+          id="playBtn"
+          class="play-btn"
+          type="button">
           ▶
         </button>
 
@@ -1188,10 +1297,21 @@
           0:00
         </span>
 
-        <input type="range" id="progress" min="0" max="100" value="0">
+        <input
+          type="range"
+          id="progress"
+          min="0"
+          max="100"
+          value="0">
 
-        <audio id="music" loop>
-          <source src="Audio website.mp3" type="audio/mpeg">
+        <audio
+          id="music"
+          loop>
+
+          <source
+            src="Audio website.mp3"
+            type="audio/mpeg">
+
         </audio>
 
       </div>
@@ -1264,7 +1384,9 @@
 
         <div class="icon">
 
-          <img src="Logo_RPL-removebg-preview.png" alt="Logo RPL">
+          <img
+            src="Logo_RPL-removebg-preview.png"
+            alt="Logo RPL">
 
         </div>
 
@@ -1434,14 +1556,21 @@
 
           <div class="id-card card">
 
-            <img class="id-photo" src="Ketua kelas.jpeg" alt="Foto Ketua Kelas">
+            <img
+              class="id-photo"
+              src="Ketua kelas.jpeg"
+              alt="Foto Ketua Kelas">
 
             <b>
               Alwan Ma'Arif
             </b>
 
-            <div class="small" style="font-size:12px;color:var(--text-muted);">
+            <div
+              class="small"
+              style="font-size:12px;color:var(--text-muted);">
+
               Ketua Kelas
+
             </div>
 
           </div>
@@ -1455,14 +1584,21 @@
 
           <div class="id-card card">
 
-            <img class="id-photo" src="Gambar kelas/struktur/wakil.jpg" alt="Foto Wakil Ketua">
+            <img
+              class="id-photo"
+              src="Gambar kelas/struktur/wakil.jpg"
+              alt="Foto Wakil Ketua">
 
             <b>
               Nama Siswa
             </b>
 
-            <div class="small" style="font-size:12px;color:var(--text-muted);">
+            <div
+              class="small"
+              style="font-size:12px;color:var(--text-muted);">
+
               Wakil Ketua
+
             </div>
 
           </div>
@@ -1470,14 +1606,21 @@
 
           <div class="id-card card">
 
-            <img class="id-photo" src="Gambar kelas/struktur/bendahara.jpg" alt="Foto Bendahara">
+            <img
+              class="id-photo"
+              src="Gambar kelas/struktur/bendahara.jpg"
+              alt="Foto Bendahara">
 
             <b>
               Nama Siswa
             </b>
 
-            <div class="small" style="font-size:12px;color:var(--text-muted);">
+            <div
+              class="small"
+              style="font-size:12px;color:var(--text-muted);">
+
               Bendahara
+
             </div>
 
           </div>
@@ -1491,14 +1634,21 @@
 
           <div class="id-card card">
 
-            <img class="id-photo" src="Gambar kelas/struktur/sekretaris1.jpg" alt="Foto Sekretaris 1">
+            <img
+              class="id-photo"
+              src="Gambar kelas/struktur/sekretaris1.jpg"
+              alt="Foto Sekretaris 1">
 
             <b>
               Nama Siswa
             </b>
 
-            <div class="small" style="font-size:12px;color:var(--text-muted);">
+            <div
+              class="small"
+              style="font-size:12px;color:var(--text-muted);">
+
               Sekretaris 1
+
             </div>
 
           </div>
@@ -1506,14 +1656,21 @@
 
           <div class="id-card card">
 
-            <img class="id-photo" src="Gambar kelas/struktur/sekretaris2.jpg" alt="Foto Sekretaris 2">
+            <img
+              class="id-photo"
+              src="Gambar kelas/struktur/sekretaris2.jpg"
+              alt="Foto Sekretaris 2">
 
             <b>
               Nama Siswa
             </b>
 
-            <div class="small" style="font-size:12px;color:var(--text-muted);">
+            <div
+              class="small"
+              style="font-size:12px;color:var(--text-muted);">
+
               Sekretaris 2
+
             </div>
 
           </div>
@@ -1521,14 +1678,21 @@
 
           <div class="id-card card">
 
-            <img class="id-photo" src="Gambar kelas/struktur/bendahara1.jpg" alt="Foto Bendahara 1">
+            <img
+              class="id-photo"
+              src="Gambar kelas/struktur/bendahara1.jpg"
+              alt="Foto Bendahara 1">
 
             <b>
               Nama Siswa
             </b>
 
-            <div class="small" style="font-size:12px;color:var(--text-muted);">
+            <div
+              class="small"
+              style="font-size:12px;color:var(--text-muted);">
+
               Bendahara 1
+
             </div>
 
           </div>
@@ -1536,14 +1700,21 @@
 
           <div class="id-card card">
 
-            <img class="id-photo" src="Gambar kelas/struktur/bendahara2.jpg" alt="Foto Bendahara 2">
+            <img
+              class="id-photo"
+              src="Gambar kelas/struktur/bendahara2.jpg"
+              alt="Foto Bendahara 2">
 
             <b>
               Nama Siswa
             </b>
 
-            <div class="small" style="font-size:12px;color:var(--text-muted);">
+            <div
+              class="small"
+              style="font-size:12px;color:var(--text-muted);">
+
               Bendahara 2
+
             </div>
 
           </div>
@@ -1671,7 +1842,9 @@
         </div>
 
 
-        <div class="bottom-card card" id="prestasi">
+        <div
+          class="bottom-card card"
+          id="prestasi">
 
           <h3>
             Prestasi Kelas
@@ -1747,7 +1920,6 @@
     });
 
 
-    /* Tutup menu setelah klik */
     document.querySelectorAll(".nav ul a").forEach(link => {
 
       link.addEventListener("click", () => {
@@ -1850,8 +2022,6 @@
 
     enterBtn.addEventListener("click", () => {
 
-      /* Mulai musik */
-
       music.play()
         .then(() => {
 
@@ -1867,19 +2037,13 @@
         });
 
 
-      /* Geser cover ke kiri */
-
       intro.classList.add("hide");
 
-
-      /* Aktifkan scroll */
 
       document.body.classList.remove(
         "intro-open"
       );
 
-
-      /* Hapus cover */
 
       setTimeout(() => {
 
@@ -1894,4 +2058,3 @@
 </body>
 
 </html>
-```
