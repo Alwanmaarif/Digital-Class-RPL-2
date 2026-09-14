@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <title>12 RPL 2</title>
 
@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --navy: #0c1c3f;
       --navy-soft: #122350;
@@ -31,10 +32,13 @@
 
     html {
       scroll-behavior: smooth;
+      width: 100%;
     }
 
     body {
       margin: 0;
+      width: 100%;
+      min-width: 0;
       background: var(--bg);
       color: var(--text-dark);
       font-family: 'Poppins', sans-serif;
@@ -55,7 +59,8 @@
       width: 100%;
       max-width: 1180px;
       margin: 0 auto;
-      padding: 0 32px;
+      padding-left: 32px;
+      padding-right: 32px;
     }
 
     .card {
@@ -65,28 +70,30 @@
     }
 
 
-    /* =========================
+    /* =====================================
        NAVBAR
-    ========================= */
+    ===================================== */
 
     .nav {
       position: relative;
+      width: 100%;
       background: var(--navy);
       color: var(--white);
-      z-index: 100;
+      z-index: 1000;
     }
 
     .nav .wrap {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 78px;
     }
 
     .nav .brand {
       display: flex;
       align-items: center;
       gap: 14px;
+      min-width: 0;
     }
 
     .nav .logo {
@@ -106,6 +113,10 @@
       object-fit: contain;
     }
 
+    .nav .brand-text {
+      min-width: 0;
+    }
+
     .nav .brand-text b {
       display: block;
       font-size: 17px;
@@ -116,6 +127,7 @@
       display: block;
       font-size: 12px;
       color: #c7cfe6;
+      white-space: nowrap;
     }
 
     .nav ul {
@@ -131,8 +143,8 @@
 
     .nav ul a {
       text-decoration: none;
-      opacity: 0.9;
-      transition: 0.2s;
+      opacity: .9;
+      transition: .2s;
     }
 
     .nav ul a:hover {
@@ -150,14 +162,14 @@
     }
 
 
-    /* =========================
+    /* =====================================
        HERO
-       BACKGROUND RESPONSIVE
-    ========================= */
+    ===================================== */
 
     .hero {
       position: relative;
-      min-height: calc(100dvh - 78px);
+      width: 100%;
+      min-height: calc(100svh - 78px);
 
       display: flex;
       align-items: center;
@@ -167,8 +179,8 @@
       background-image:
         linear-gradient(
           180deg,
-          rgba(6, 14, 34, 0.45),
-          rgba(6, 14, 34, 0.82)
+          rgba(6, 14, 34, .40),
+          rgba(6, 14, 34, .84)
         ),
         url("Kenangan 13.jpeg");
 
@@ -179,11 +191,16 @@
       padding: 90px 0 130px;
     }
 
+    .hero .wrap {
+      position: relative;
+      z-index: 2;
+    }
+
     .hero .eyebrow {
       color: var(--gold);
       font-weight: 700;
       font-size: 15px;
-      letter-spacing: 0.03em;
+      letter-spacing: .03em;
       margin-bottom: 10px;
     }
 
@@ -212,9 +229,9 @@
       padding: 14px 26px;
       border-radius: 999px;
       text-decoration: none;
-      box-shadow: 0 8px 20px rgba(47, 93, 240, 0.4);
+      box-shadow: 0 8px 20px rgba(47, 93, 240, .4);
       margin-bottom: 34px;
-      transition: 0.2s;
+      transition: .2s;
     }
 
     .hero .btn:hover {
@@ -222,16 +239,16 @@
     }
 
 
-    /* =========================
-       AUDIO PLAYER
-    ========================= */
+    /* =====================================
+       AUDIO
+    ===================================== */
 
     .audio-player {
       display: flex;
       align-items: center;
       gap: 14px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .18);
       border-radius: 999px;
       padding: 10px 18px;
       width: 100%;
@@ -255,10 +272,6 @@
       flex-shrink: 0;
     }
 
-    .play-btn:hover {
-      transform: scale(1.05);
-    }
-
     #progress {
       flex: 1;
       min-width: 0;
@@ -273,9 +286,9 @@
     }
 
 
-    /* =========================
-       STAT CARDS
-    ========================= */
+    /* =====================================
+       STATS
+    ===================================== */
 
     .stats {
       margin-top: -70px;
@@ -322,11 +335,12 @@
     }
 
 
-    /* =========================
+    /* =====================================
        SECTION
-    ========================= */
+    ===================================== */
 
     section {
+      width: 100%;
       padding: 80px 0;
     }
 
@@ -341,9 +355,9 @@
     }
 
 
-    /* =========================
+    /* =====================================
        PROFIL
-    ========================= */
+    ===================================== */
 
     .profil-card {
       padding: 48px;
@@ -393,9 +407,9 @@
     }
 
 
-    /* =========================
-       STRUKTUR KELAS
-    ========================= */
+    /* =====================================
+       STRUKTUR
+    ===================================== */
 
     .struktur-grid {
       display: flex;
@@ -433,9 +447,82 @@
     }
 
 
-    /* =========================
+    /* =====================================
+       JADWAL
+    ===================================== */
+
+    .jadwal-section {
+      background: #ffffff;
+    }
+
+    .jadwal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 35px;
+    }
+
+    .jadwal-header .section-title {
+      margin: 0;
+    }
+
+    .jadwal-code {
+      color: var(--text-muted);
+      font-size: 13px;
+      font-family: monospace;
+    }
+
+    .jadwal-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid #d9dce3;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .jadwal-table {
+      width: 100%;
+      min-width: 850px;
+      border-collapse: collapse;
+      background: white;
+      font-size: 13px;
+    }
+
+    .jadwal-table th {
+      background: #1d1a17;
+      color: white;
+      text-align: left;
+      padding: 14px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      border-right: 1px solid #555;
+    }
+
+    .jadwal-table td {
+      padding: 13px 10px;
+      border-bottom: 1px solid #dddfe5;
+      border-right: 1px solid #dddfe5;
+      white-space: nowrap;
+    }
+
+    .jadwal-table tbody tr:nth-child(even) {
+      background: #eee6d0;
+    }
+
+    .jadwal-table tbody tr:hover {
+      background: #f5a623;
+    }
+
+    .jadwal-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+
+
+    /* =====================================
        GALERI
-    ========================= */
+    ===================================== */
 
     .galeri-grid {
       display: grid;
@@ -454,8 +541,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
+      transition: transform .3s ease;
     }
 
     .galeri-grid .ph:hover img {
@@ -463,67 +549,98 @@
     }
 
 
-    /* =========================
-       BOTTOM CARD
-    ========================= */
+    /* =====================================
+       KABAR / PRESTASI
+    ===================================== */
 
-    .bottom-grid {
+    .prestasi-section {
+      background: var(--bg);
+    }
+
+    .prestasi-title {
+      color: #6d7a31;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .pengumuman-list {
+      margin-bottom: 45px;
+    }
+
+    .pengumuman-item {
+      display: flex;
+      gap: 25px;
+      padding: 13px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 13px;
+    }
+
+    .pengumuman-date {
+      color: var(--red);
+      font-family: monospace;
+      min-width: 50px;
+      flex-shrink: 0;
+    }
+
+    .prestasi-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 16px;
     }
 
-    .bottom-card {
-      padding: 34px 26px;
-      min-height: 170px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .prestasi-card {
+      background: white;
+      border: 1px solid #222;
+      box-shadow: 4px 4px 0 #222;
+      overflow: hidden;
     }
 
-    .bottom-card.dark {
-      background: linear-gradient(
-        135deg,
-        var(--navy),
-        #183166
-      );
-      color: var(--white);
+    .prestasi-photo {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #e5e5e5;
+      overflow: hidden;
     }
 
-    .bottom-card h3 {
-      margin: 0 0 6px;
-      font-size: 18px;
-      font-weight: 700;
+    .prestasi-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s ease;
     }
 
-    .bottom-card p {
+    .prestasi-card:hover .prestasi-photo img {
+      transform: scale(1.05);
+    }
+
+    .prestasi-info {
+      padding: 12px;
+      background: white;
+    }
+
+    .prestasi-year {
+      color: var(--red);
+      font-size: 10px;
+      font-family: monospace;
+      margin-bottom: 2px;
+    }
+
+    .prestasi-info h3 {
+      font-size: 12px;
+      font-weight: 500;
       margin: 0;
-      font-size: 13.5px;
-      opacity: 0.85;
-    }
-
-    .bottom-card ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      font-size: 13.5px;
-    }
-
-    .bottom-card ul li {
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .bottom-card.dark ul li {
-      border-bottom-color: rgba(255, 255, 255, 0.12);
+      line-height: 1.5;
     }
 
 
-    /* =========================
+    /* =====================================
        FOOTER
-    ========================= */
+    ===================================== */
 
     footer {
+      width: 100%;
       background: var(--navy);
       color: #c7cfe6;
       padding: 26px 0;
@@ -532,10 +649,9 @@
     }
 
 
-    /* =========================
-       COVER / INTRO
-       FULL SCREEN RESPONSIVE
-    ========================= */
+    /* =====================================
+       INTRO
+    ===================================== */
 
     body.intro-open {
       overflow: hidden;
@@ -544,10 +660,8 @@
     .intro-slide {
       position: fixed;
       inset: 0;
-
       width: 100%;
-      height: 100dvh;
-
+      height: 100svh;
       z-index: 9999;
 
       display: flex;
@@ -560,8 +674,8 @@
       background-image:
         linear-gradient(
           180deg,
-          rgba(6, 14, 34, 0.45),
-          rgba(6, 14, 34, 0.90)
+          rgba(6, 14, 34, .40),
+          rgba(6, 14, 34, .90)
         ),
         url("Kenangan 13.jpeg");
 
@@ -570,8 +684,8 @@
       background-repeat: no-repeat;
 
       transition:
-        transform 0.9s cubic-bezier(0.77, 0, 0.175, 1),
-        opacity 0.9s ease;
+        transform .9s cubic-bezier(.77,0,.175,1),
+        opacity .9s ease;
     }
 
     .intro-slide.hide {
@@ -595,16 +709,14 @@
       height: 120px;
       object-fit: contain;
       margin-bottom: 22px;
-      filter: drop-shadow(
-        0 8px 20px rgba(0, 0, 0, 0.35)
-      );
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,.35));
     }
 
     .intro-kicker {
       color: var(--gold);
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.2em;
+      letter-spacing: .2em;
       margin: 0 0 8px;
     }
 
@@ -613,8 +725,7 @@
       line-height: 1;
       margin: 0 0 14px;
       font-weight: 800;
-      text-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.35);
+      text-shadow: 0 5px 20px rgba(0,0,0,.35);
     }
 
     .intro-content p {
@@ -633,41 +744,46 @@
       padding: 14px 32px;
       border-radius: 999px;
       cursor: pointer;
-
-      box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3);
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,.3);
+      transition: .2s;
     }
 
     .enter-btn:hover {
       transform: translateY(-3px);
-
-      box-shadow:
-        0 14px 35px rgba(0, 0, 0, 0.4);
     }
 
 
-    /* =========================
+    /* =====================================
        TABLET
-    ========================= */
+    ===================================== */
+
+    @media (max-width: 1100px) {
+
+      .wrap {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .nav ul {
+        gap: 18px;
+      }
+
+      .galeri-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
 
     @media (max-width: 900px) {
 
-      .wrap {
-        padding: 0 24px;
+      .nav .wrap {
+        min-height: 72px;
       }
-
-
-      /* NAVBAR */
 
       .nav ul {
         display: none;
-
         position: absolute;
-        top: 78px;
+        top: 72px;
         left: 0;
         right: 0;
 
@@ -675,15 +791,13 @@
 
         flex-direction: column;
         align-items: flex-start;
-
         gap: 0;
 
         background: var(--navy);
 
         padding: 10px 24px 20px;
 
-        box-shadow:
-          0 10px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 10px 20px rgba(0,0,0,.15);
       }
 
       .nav ul.show {
@@ -705,14 +819,9 @@
       }
 
 
-      /* HERO */
-
       .hero {
-        min-height: calc(100dvh - 78px);
-
+        min-height: calc(100svh - 72px);
         padding: 70px 0 110px;
-
-        background-size: cover;
         background-position: center center;
       }
 
@@ -721,14 +830,10 @@
       }
 
 
-      /* STAT */
-
       .stats .wrap {
         grid-template-columns: repeat(2, 1fr);
       }
 
-
-      /* PROFIL */
 
       .profil-card {
         grid-template-columns: 1fr;
@@ -737,21 +842,15 @@
       }
 
 
-      /* GALERI */
-
       .galeri-grid {
         grid-template-columns: repeat(3, 1fr);
       }
 
 
-      /* BOTTOM */
-
-      .bottom-grid {
-        grid-template-columns: 1fr;
+      .prestasi-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-
-      /* STRUKTUR */
 
       .struktur-row {
         gap: 14px;
@@ -760,34 +859,27 @@
       .id-card {
         width: 135px;
       }
-
-
-      /* INTRO */
-
-      .intro-slide {
-        width: 100%;
-        height: 100dvh;
-
-        background-size: cover;
-        background-position: center center;
-      }
     }
 
 
-    /* =========================
+    /* =====================================
        HP
-    ========================= */
+    ===================================== */
 
     @media (max-width: 600px) {
 
+      html,
       body {
         width: 100%;
+        max-width: 100%;
         overflow-x: hidden;
       }
 
       .wrap {
         width: 100%;
-        padding: 0 16px;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
 
@@ -795,7 +887,9 @@
 
       .nav .wrap {
         height: 68px;
-        padding: 0 16px;
+        min-height: 68px;
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
       .nav .logo {
@@ -813,6 +907,9 @@
 
       .nav .brand-text span {
         font-size: 9px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 190px;
       }
 
       .nav-toggle {
@@ -829,9 +926,12 @@
       /* HERO */
 
       .hero {
-        min-height: calc(100dvh - 68px);
+        width: 100%;
+        min-height: calc(100svh - 68px);
 
-        padding: 60px 0 100px;
+        padding:
+          60px 0
+          100px;
 
         background-size: cover;
         background-position: center center;
@@ -866,24 +966,20 @@
       }
 
 
-      /* STAT */
+      /* STATS */
 
       .stats {
         margin-top: -55px;
       }
 
       .stats .wrap {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
       }
 
       .stat-card {
         padding: 18px 8px;
         border-radius: 14px;
-      }
-
-      .stat-card .icon {
-        font-size: 22px;
       }
 
       .stat-card .icon img {
@@ -933,10 +1029,6 @@
         margin-bottom: 17px;
       }
 
-      .value-item .ic {
-        font-size: 18px;
-      }
-
       .value-item b {
         font-size: 14px;
       }
@@ -972,15 +1064,52 @@
         font-size: 12px;
       }
 
-      .id-card .small {
-        font-size: 10px !important;
+
+      /* JADWAL */
+
+      .jadwal-header {
+        display: block;
+        margin-bottom: 25px;
+      }
+
+      .jadwal-header .section-title {
+        margin-bottom: 7px;
+      }
+
+      .jadwal-code {
+        font-size: 11px;
+      }
+
+      .jadwal-table-wrap {
+        width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
+        overflow-x: auto;
+      }
+
+      .jadwal-table {
+        min-width: 760px;
+        font-size: 11px;
+      }
+
+      .jadwal-table th {
+        padding: 11px 8px;
+        font-size: 9px;
+      }
+
+      .jadwal-table td {
+        padding: 11px 8px;
+      }
+
+      .jadwal-note {
+        font-size: 10px;
+        line-height: 1.5;
       }
 
 
       /* GALERI */
 
       .galeri-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
       }
 
@@ -989,39 +1118,51 @@
       }
 
 
-      /* BOTTOM */
+      /* KABAR */
 
-      .bottom-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
+      .pengumuman-list {
+        margin-bottom: 35px;
       }
 
-      .bottom-card {
-        padding: 25px 20px;
-        min-height: 140px;
-      }
-
-      .bottom-card h3 {
-        font-size: 16px;
-      }
-
-      .bottom-card p,
-      .bottom-card ul {
+      .pengumuman-item {
+        gap: 12px;
         font-size: 12px;
       }
 
+      .pengumuman-date {
+        min-width: 48px;
+      }
 
-      /* COVER */
+
+      /* PRESTASI */
+
+      .prestasi-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .prestasi-card {
+        width: 100%;
+      }
+
+      .prestasi-photo {
+        aspect-ratio: 4 / 3;
+      }
+
+
+      /* INTRO */
 
       .intro-slide {
-        width: 100%;
-        height: 100dvh;
+        width: 100vw;
+        height: 100svh;
 
         background-size: cover;
         background-position: center center;
       }
 
       .intro-content {
+        width: 100%;
+        max-width: 100%;
         padding: 20px;
       }
 
@@ -1059,14 +1200,15 @@
     }
 
 
-    /* =========================
+    /* =====================================
        HP KECIL
-    ========================= */
+    ===================================== */
 
     @media (max-width: 380px) {
 
       .wrap {
-        padding: 0 12px;
+        padding-left: 12px;
+        padding-right: 12px;
       }
 
       .nav .brand-text b {
@@ -1075,13 +1217,11 @@
 
       .nav .brand-text span {
         font-size: 8px;
+        max-width: 160px;
       }
 
       .hero {
-        min-height: calc(100dvh - 68px);
-
-        background-size: cover;
-        background-position: center center;
+        min-height: calc(100svh - 68px);
       }
 
       .hero h1 {
@@ -1120,12 +1260,12 @@
         padding: 24px 18px;
       }
 
-      .intro-slide {
-        height: 100dvh;
-        background-size: cover;
-        background-position: center center;
+      .jadwal-table-wrap {
+        width: calc(100vw - 24px);
+        max-width: calc(100vw - 24px);
       }
     }
+
   </style>
 </head>
 
@@ -1133,9 +1273,9 @@
 <body class="intro-open">
 
 
-  <!-- =========================
+  <!-- =====================================
        COVER DEPAN
-  ========================= -->
+  ===================================== -->
 
   <section class="intro-slide" id="intro">
 
@@ -1162,7 +1302,9 @@
         id="enterBtn"
         class="enter-btn"
         type="button">
+
         MASUK →
+
       </button>
 
     </div>
@@ -1170,9 +1312,10 @@
   </section>
 
 
-  <!-- =========================
+
+  <!-- =====================================
        NAVBAR
-  ========================= -->
+  ===================================== -->
 
   <nav class="nav">
 
@@ -1222,6 +1365,12 @@
         </li>
 
         <li>
+          <a href="#jadwal">
+            Jadwal
+          </a>
+        </li>
+
+        <li>
           <a href="#galeri">
             Galeri
           </a>
@@ -1229,13 +1378,7 @@
 
         <li>
           <a href="#pengumuman">
-            Pengumuman
-          </a>
-        </li>
-
-        <li>
-          <a href="#prestasi">
-            Prestasi
+            Kabar
           </a>
         </li>
 
@@ -1247,7 +1390,9 @@
         id="navToggle"
         aria-label="Menu"
         type="button">
+
         ☰
+
       </button>
 
     </div>
@@ -1255,9 +1400,10 @@
   </nav>
 
 
-  <!-- =========================
+
+  <!-- =====================================
        HERO
-  ========================= -->
+  ===================================== -->
 
   <header class="hero" id="beranda">
 
@@ -1278,11 +1424,11 @@
       <a
         class="btn"
         href="#profil">
+
         Tentang Kelas →
+
       </a>
 
-
-      <!-- AUDIO -->
 
       <div class="audio-player">
 
@@ -1290,7 +1436,9 @@
           id="playBtn"
           class="play-btn"
           type="button">
+
           ▶
+
         </button>
 
         <span id="time">
@@ -1304,9 +1452,7 @@
           max="100"
           value="0">
 
-        <audio
-          id="music"
-          loop>
+        <audio id="music" loop>
 
           <source
             src="Audio website.mp3"
@@ -1321,9 +1467,10 @@
   </header>
 
 
-  <!-- =========================
+
+  <!-- =====================================
        STATISTIK
-  ========================= -->
+  ===================================== -->
 
   <div class="stats">
 
@@ -1405,9 +1552,10 @@
   </div>
 
 
-  <!-- =========================
+
+  <!-- =====================================
        PROFIL
-  ========================= -->
+  ===================================== -->
 
   <section id="profil">
 
@@ -1422,7 +1570,7 @@
           </h2>
 
           <p>
-            RPL X adalah kelas yang penuh semangat,
+            12 RPL 2 adalah kelas yang penuh semangat,
             kreativitas, dan kekompakan.
 
             Satu langkah hari ini adalah awal dari
@@ -1534,9 +1682,10 @@
   </section>
 
 
-  <!-- =========================
+
+  <!-- =====================================
        STRUKTUR KELAS
-  ========================= -->
+  ===================================== -->
 
   <section id="pengurus">
 
@@ -1728,9 +1877,235 @@
   </section>
 
 
-  <!-- =========================
+
+  <!-- =====================================
+       JADWAL PELAJARAN
+  ===================================== -->
+
+  <section
+    id="jadwal"
+    class="jadwal-section">
+
+    <div class="wrap">
+
+      <div class="jadwal-header">
+
+        <h2 class="section-title">
+          Jadwal Pelajaran
+        </h2>
+
+        <div class="jadwal-code">
+          03 / mingguan
+        </div>
+
+      </div>
+
+
+      <div class="jadwal-table-wrap">
+
+        <table class="jadwal-table">
+
+          <thead>
+
+            <tr>
+
+              <th>
+                JAM
+              </th>
+
+              <th>
+                SENIN
+              </th>
+
+              <th>
+                SELASA
+              </th>
+
+              <th>
+                RABU
+              </th>
+
+              <th>
+                KAMIS
+              </th>
+
+              <th>
+                JUMAT
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr>
+
+              <td>
+                07.00–08.30
+              </td>
+
+              <td>
+                Matematika
+              </td>
+
+              <td>
+                Basis Data
+              </td>
+
+              <td>
+                B. Indonesia
+              </td>
+
+              <td>
+                Pemrograman Web
+              </td>
+
+              <td>
+                Olahraga
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                08.30–10.00
+              </td>
+
+              <td>
+                Pemrograman Web
+              </td>
+
+              <td>
+                B. Inggris
+              </td>
+
+              <td>
+                Basis Data
+              </td>
+
+              <td>
+                Matematika
+              </td>
+
+              <td>
+                Kerohanian
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                10.15–11.45
+              </td>
+
+              <td>
+                PKK
+              </td>
+
+              <td>
+                Pemrograman Web
+              </td>
+
+              <td>
+                PKn
+              </td>
+
+              <td>
+                B. Indonesia
+              </td>
+
+              <td>
+                Proyek Kelas
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                13.00–14.30
+              </td>
+
+              <td>
+                Basis Data
+              </td>
+
+              <td>
+                PKK
+              </td>
+
+              <td>
+                Pemrograman Web
+              </td>
+
+              <td>
+                Seni Budaya
+              </td>
+
+              <td>
+                —
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <td>
+                14.30–15.30
+              </td>
+
+              <td>
+                Bimbingan Konseling
+              </td>
+
+              <td>
+                Ekstrakurikuler
+              </td>
+
+              <td>
+                Basis Data
+              </td>
+
+              <td>
+                PKK
+              </td>
+
+              <td>
+                —
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <div class="jadwal-note">
+
+        * Jadwal dapat berubah menyesuaikan kalender akademik sekolah.
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
        GALERI
-  ========================= -->
+  ===================================== -->
 
   <section id="galeri">
 
@@ -1810,70 +2185,170 @@
   </section>
 
 
-  <!-- =========================
-       PENGUMUMAN + PRESTASI
-  ========================= -->
 
-  <section id="pengumuman">
+  <!-- =====================================
+       KABAR KELAS
+  ===================================== -->
+
+  <section
+    id="pengumuman"
+    class="prestasi-section">
 
     <div class="wrap">
 
-      <div class="bottom-grid">
+      <div class="jadwal-header">
+
+        <h2 class="section-title">
+          Kabar Kelas
+        </h2>
+
+        <div class="jadwal-code">
+          05 / update
+        </div>
+
+      </div>
 
 
-        <div class="bottom-card dark card">
+      <!-- PENGUMUMAN -->
 
-          <h3>
-            Pengumuman Terbaru
-          </h3>
+      <div class="prestasi-title">
+        PENGUMUMAN
+      </div>
 
-          <ul>
 
-            <li>
-              Isi pengumuman terbaru di sini.
-            </li>
+      <div class="pengumuman-list">
 
-            <li>
-              Isi pengumuman kedua di sini.
-            </li>
+        <div class="pengumuman-item">
 
-          </ul>
+          <span class="pengumuman-date">
+            10 SEP
+          </span>
+
+          <span>
+            Isi pengumuman terbaru di sini.
+          </span>
 
         </div>
 
 
-        <div
-          class="bottom-card card"
-          id="prestasi">
+        <div class="pengumuman-item">
 
-          <h3>
-            Prestasi Kelas
-          </h3>
+          <span class="pengumuman-date">
+            02 SEP
+          </span>
 
-          <ul>
-
-            <li>
-              Nama lomba / pencapaian kelas.
-            </li>
-
-            <li>
-              Nama lomba / pencapaian kelas.
-            </li>
-
-          </ul>
+          <span>
+            Isi pengumuman kedua di sini.
+          </span>
 
         </div>
 
 
-        <div class="bottom-card dark card">
+        <div class="pengumuman-item">
 
-          <h3>
-            Ikuti Kami
-          </h3>
+          <span class="pengumuman-date">
+            28 AGS
+          </span>
 
-          <p>
-            @namakelas
-          </p>
+          <span>
+            Isi pengumuman ketiga di sini.
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- PRESTASI -->
+
+      <div class="prestasi-title">
+        PRESTASI
+      </div>
+
+
+      <div class="prestasi-grid">
+
+
+        <!-- PRESTASI 1 -->
+
+        <div class="prestasi-card">
+
+          <div class="prestasi-photo">
+
+            <img
+              src="Prestasi 1.jpg"
+              alt="Foto Prestasi 1">
+
+          </div>
+
+          <div class="prestasi-info">
+
+            <div class="prestasi-year">
+              2026
+            </div>
+
+            <h3>
+              Nama lomba / pencapaian kelas.
+            </h3>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PRESTASI 2 -->
+
+        <div class="prestasi-card">
+
+          <div class="prestasi-photo">
+
+            <img
+              src="Prestasi 2.jpg"
+              alt="Foto Prestasi 2">
+
+          </div>
+
+          <div class="prestasi-info">
+
+            <div class="prestasi-year">
+              2025
+            </div>
+
+            <h3>
+              Nama lomba / pencapaian kelas.
+            </h3>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PRESTASI 3 -->
+
+        <div class="prestasi-card">
+
+          <div class="prestasi-photo">
+
+            <img
+              src="Prestasi 3.jpg"
+              alt="Foto Prestasi 3">
+
+          </div>
+
+          <div class="prestasi-info">
+
+            <div class="prestasi-year">
+              2025
+            </div>
+
+            <h3>
+              Nama lomba / pencapaian kelas.
+            </h3>
+
+          </div>
 
         </div>
 
@@ -1884,9 +2359,10 @@
   </section>
 
 
-  <!-- =========================
+
+  <!-- =====================================
        FOOTER
-  ========================= -->
+  ===================================== -->
 
   <footer>
 
@@ -1896,9 +2372,10 @@
   </footer>
 
 
-  <!-- =========================
+
+  <!-- =====================================
        JAVASCRIPT
-  ========================= -->
+  ===================================== -->
 
   <script>
 
@@ -1920,15 +2397,18 @@
     });
 
 
-    document.querySelectorAll(".nav ul a").forEach(link => {
+    document
+      .querySelectorAll(".nav ul a")
+      .forEach(link => {
 
-      link.addEventListener("click", () => {
+        link.addEventListener("click", () => {
 
-        navList.classList.remove("show");
+          navList.classList.remove("show");
+
+        });
 
       });
 
-    });
 
 
     /* =========================
@@ -2007,6 +2487,7 @@
 
 
     music.loop = true;
+
 
 
     /* =========================
