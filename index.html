@@ -809,37 +809,18 @@
 
     @media (max-width: 600px) {
 
-      .hero {
-        min-height: calc(100svh - 70px);
-        height: auto;
-
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-      }
-
-      .hero .wrap {
-        min-height: calc(100svh - 70px);
-        display: flex;
-        align-items: center;
-      }
-
-      .hero-content {
+      html,
+      body {
         width: 100%;
-        padding: 30px 20px;
+        max-width: 100%;
+        overflow-x: hidden;
       }
 
-      .hero h1 {
-        font-size: 52px;
-        line-height: 1;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .hero .eyebrow {
-        font-size: 13px;
+      .wrap {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
 
@@ -1783,7 +1764,7 @@
       <center>
         <h1>Jadwal Pelajaran</h1>
       </center>
-
+        
       <div class="jadwal-image">
         <img src="jadwal pelajaran.jpeg" alt="Jadwal Pelajaran Kelas 12 RPL 2">
       </div>
