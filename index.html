@@ -808,15 +808,21 @@
     ===================================== */
 
     @media (max-width: 600px) {
-  .hero {
-    min-height: calc(100svh - 70px);
-    background-size: cover;
-    background-position: center 65%;
-  }
 
-  .hero .wrap {
-    min-height: calc(100svh - 70px);
-  }
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .wrap {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
 
       /* NAVBAR */
 
