@@ -13,7 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-
     :root {
       --navy: #0c1c3f;
       --navy-soft: #122350;
@@ -177,11 +176,9 @@
       color: var(--white);
 
       background-image:
-        linear-gradient(
-          180deg,
+        linear-gradient(180deg,
           rgba(6, 14, 34, .40),
-          rgba(6, 14, 34, .84)
-        ),
+          rgba(6, 14, 34, .84)),
         url("Kenangan 13.jpeg");
 
       background-size: cover;
@@ -451,72 +448,17 @@
        JADWAL
     ===================================== */
 
-    .jadwal-section {
-      background: #ffffff00;
-    }
-
-    .jadwal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 35px;
-    }
-
-    .jadwal-header .section-title {
-      margin: 0;
-    }
-
-    .jadwal-code {
-      color: var(--text-muted);
-      font-size: 13px;
-      font-family: monospace;
-    }
-
-    .jadwal-table-wrap {
+    .jadwal-image {
       width: 100%;
       overflow-x: auto;
-      border: 1px solid #d9dce3;
-      -webkit-overflow-scrolling: touch;
+      margin-top: 25px;
     }
 
-    .jadwal-table {
+    .jadwal-image img {
+      display: block;
       width: 100%;
-      min-width: 850px;
-      border-collapse: collapse;
-      background: white;
-      font-size: 13px;
-    }
-
-    .jadwal-table th {
-      background: #1d1a17;
-      color: white;
-      text-align: left;
-      padding: 14px 10px;
-      font-size: 11px;
-      font-weight: 700;
-      border-right: 1px solid #555;
-    }
-
-    .jadwal-table td {
-      padding: 13px 10px;
-      border-bottom: 1px solid #dddfe5;
-      border-right: 1px solid #dddfe5;
-      white-space: nowrap;
-    }
-
-    .jadwal-table tbody tr:nth-child(even) {
-      background: #eee6d0;
-    }
-
-    .jadwal-table tbody tr:hover {
-      background: #f5a623;
-    }
-
-    .jadwal-note {
-      margin-top: 16px;
-      font-size: 12px;
-      color: var(--text-muted);
-      font-family: monospace;
+      height: auto;
+      border-radius: 10px;
     }
 
 
@@ -672,11 +614,9 @@
       color: var(--white);
 
       background-image:
-        linear-gradient(
-          180deg,
+        linear-gradient(180deg,
           rgba(6, 14, 34, .40),
-          rgba(6, 14, 34, .90)
-        ),
+          rgba(6, 14, 34, .90)),
         url("Kenangan 13.jpeg");
 
       background-size: cover;
@@ -684,7 +624,7 @@
       background-repeat: no-repeat;
 
       transition:
-        transform .9s cubic-bezier(.77,0,.175,1),
+        transform .9s cubic-bezier(.77, 0, .175, 1),
         opacity .9s ease;
     }
 
@@ -709,7 +649,7 @@
       height: 120px;
       object-fit: contain;
       margin-bottom: 22px;
-      filter: drop-shadow(0 8px 20px rgba(0,0,0,.35));
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, .35));
     }
 
     .intro-kicker {
@@ -725,7 +665,7 @@
       line-height: 1;
       margin: 0 0 14px;
       font-weight: 800;
-      text-shadow: 0 5px 20px rgba(0,0,0,.35);
+      text-shadow: 0 5px 20px rgba(0, 0, 0, .35);
     }
 
     .intro-content p {
@@ -744,7 +684,7 @@
       padding: 14px 32px;
       border-radius: 999px;
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0,0,0,.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
       transition: .2s;
     }
 
@@ -797,7 +737,7 @@
 
         padding: 10px 24px 20px;
 
-        box-shadow: 0 10px 20px rgba(0,0,0,.15);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
       }
 
       .nav ul.show {
@@ -930,8 +870,7 @@
         min-height: calc(100svh - 68px);
 
         padding:
-          60px 0
-          100px;
+          60px 0 100px;
 
         background-size: cover;
         background-position: center center;
@@ -1265,7 +1204,6 @@
         max-width: calc(100vw - 24px);
       }
     }
-
   </style>
 </head>
 
@@ -1281,10 +1219,7 @@
 
     <div class="intro-content">
 
-      <img
-        class="intro-logo"
-        src="Logo kelas.png"
-        alt="Logo Kelas">
+      <img class="intro-logo" src="Logo kelas.png" alt="Logo Kelas">
 
       <div class="intro-kicker">
         WEBSITE KELAS
@@ -1298,10 +1233,7 @@
         SMKN 12 Kabupaten Tangerang
       </p>
 
-      <button
-        id="enterBtn"
-        class="enter-btn"
-        type="button">
+      <button id="enterBtn" class="enter-btn" type="button">
 
         MASUK →
 
@@ -1324,9 +1256,7 @@
       <div class="brand">
 
         <div class="logo">
-          <img
-            src="Logo kelas.png"
-            alt="Logo 12 RPL 2">
+          <img src="Logo kelas.png" alt="Logo 12 RPL 2">
         </div>
 
         <div class="brand-text">
@@ -1385,11 +1315,7 @@
       </ul>
 
 
-      <button
-        class="nav-toggle"
-        id="navToggle"
-        aria-label="Menu"
-        type="button">
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" type="button">
 
         ☰
 
@@ -1421,9 +1347,7 @@
         "Tumbuh Bersama, Berkarya, Wujudkan Masa Depan"
       </p>
 
-      <a
-        class="btn"
-        href="#profil">
+      <a class="btn" href="#profil">
 
         Tentang Kelas →
 
@@ -1432,10 +1356,7 @@
 
       <div class="audio-player">
 
-        <button
-          id="playBtn"
-          class="play-btn"
-          type="button">
+        <button id="playBtn" class="play-btn" type="button">
 
           ▶
 
@@ -1445,18 +1366,11 @@
           0:00
         </span>
 
-        <input
-          type="range"
-          id="progress"
-          min="0"
-          max="100"
-          value="0">
+        <input type="range" id="progress" min="0" max="100" value="0">
 
         <audio id="music" loop>
 
-          <source
-            src="Audio website.mp3"
-            type="audio/mpeg">
+          <source src="Audio website.mp3" type="audio/mpeg">
 
         </audio>
 
@@ -1531,9 +1445,7 @@
 
         <div class="icon">
 
-          <img
-            src="Logo_RPL-removebg-preview.png"
-            alt="Logo RPL">
+          <img src="Logo_RPL-removebg-preview.png" alt="Logo RPL">
 
         </div>
 
@@ -1705,18 +1617,13 @@
 
           <div class="id-card card">
 
-            <img
-              class="id-photo"
-              src="Ketua kelas.jpeg"
-              alt="Foto Ketua Kelas">
+            <img class="id-photo" src="Ketua kelas.jpeg" alt="Foto Ketua Kelas">
 
             <b>
               Alwan Ma'Arif
             </b>
 
-            <div
-              class="small"
-              style="font-size:12px;color:var(--text-muted);">
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
 
               Ketua Kelas
 
@@ -1733,18 +1640,13 @@
 
           <div class="id-card card">
 
-            <img
-              class="id-photo"
-              src="Gambar kelas/struktur/wakil.jpg"
-              alt="Foto Wakil Ketua">
+            <img class="id-photo" src="Gambar kelas/struktur/wakil.jpg" alt="Foto Wakil Ketua">
 
             <b>
               Nama Siswa
             </b>
 
-            <div
-              class="small"
-              style="font-size:12px;color:var(--text-muted);">
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
 
               Wakil Ketua
 
@@ -1755,18 +1657,13 @@
 
           <div class="id-card card">
 
-            <img
-              class="id-photo"
-              src="Gambar kelas/struktur/bendahara.jpg"
-              alt="Foto Bendahara">
+            <img class="id-photo" src="Gambar kelas/struktur/bendahara.jpg" alt="Foto Bendahara">
 
             <b>
               Nama Siswa
             </b>
 
-            <div
-              class="small"
-              style="font-size:12px;color:var(--text-muted);">
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
 
               Bendahara
 
@@ -1783,18 +1680,13 @@
 
           <div class="id-card card">
 
-            <img
-              class="id-photo"
-              src="Gambar kelas/struktur/sekretaris1.jpg"
-              alt="Foto Sekretaris 1">
+            <img class="id-photo" src="Gambar kelas/struktur/sekretaris1.jpg" alt="Foto Sekretaris 1">
 
             <b>
               Nama Siswa
             </b>
 
-            <div
-              class="small"
-              style="font-size:12px;color:var(--text-muted);">
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
 
               Sekretaris 1
 
@@ -1805,18 +1697,13 @@
 
           <div class="id-card card">
 
-            <img
-              class="id-photo"
-              src="Gambar kelas/struktur/sekretaris2.jpg"
-              alt="Foto Sekretaris 2">
+            <img class="id-photo" src="Gambar kelas/struktur/sekretaris2.jpg" alt="Foto Sekretaris 2">
 
             <b>
               Nama Siswa
             </b>
 
-            <div
-              class="small"
-              style="font-size:12px;color:var(--text-muted);">
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
 
               Sekretaris 2
 
@@ -1827,18 +1714,13 @@
 
           <div class="id-card card">
 
-            <img
-              class="id-photo"
-              src="Gambar kelas/struktur/bendahara1.jpg"
-              alt="Foto Bendahara 1">
+            <img class="id-photo" src="Gambar kelas/struktur/bendahara1.jpg" alt="Foto Bendahara 1">
 
             <b>
               Nama Siswa
             </b>
 
-            <div
-              class="small"
-              style="font-size:12px;color:var(--text-muted);">
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
 
               Bendahara 1
 
@@ -1849,18 +1731,13 @@
 
           <div class="id-card card">
 
-            <img
-              class="id-photo"
-              src="Gambar kelas/struktur/bendahara2.jpg"
-              alt="Foto Bendahara 2">
+            <img class="id-photo" src="Gambar kelas/struktur/bendahara2.jpg" alt="Foto Bendahara 2">
 
             <b>
               Nama Siswa
             </b>
 
-            <div
-              class="small"
-              style="font-size:12px;color:var(--text-muted);">
+            <div class="small" style="font-size:12px;color:var(--text-muted);">
 
               Bendahara 2
 
@@ -1881,220 +1758,14 @@
   <!-- =====================================
        JADWAL PELAJARAN
   ===================================== -->
-
-  <section
-    id="jadwal"
-    class="jadwal-section">
-
+  <section id="jadwal">
     <div class="wrap">
+      <h2>Jadwal Pelajaran</h2>
 
-      <div class="jadwal-header">
-
-        <h2 class="section-title">
-          Jadwal Pelajaran
-        </h2>
-
+      <div class="jadwal-image">
+        <img src="foto prestasi alwan (2).jpeg" alt="Jadwal Pelajaran 12 RPL 2">
       </div>
-
-
-      <div class="jadwal-table-wrap">
-
-        <table class="jadwal-table">
-
-          <thead>
-
-            <tr>
-
-              <th>
-                JAM
-              </th>
-
-              <th>
-                SENIN
-              </th>
-
-              <th>
-                SELASA
-              </th>
-
-              <th>
-                RABU
-              </th>
-
-              <th>
-                KAMIS
-              </th>
-
-              <th>
-                JUMAT
-              </th>
-
-            </tr>
-
-          </thead>
-
-
-          <tbody>
-
-            <tr>
-
-              <td>
-                07.00–08.30
-              </td>
-
-              <td>
-                Matematika
-              </td>
-
-              <td>
-                Basis Data
-              </td>
-
-              <td>
-                B. Indonesia
-              </td>
-
-              <td>
-                Pemrograman Web
-              </td>
-
-              <td>
-                Olahraga
-              </td>
-
-            </tr>
-
-
-            <tr>
-
-              <td>
-                08.30–10.00
-              </td>
-
-              <td>
-                Pemrograman Web
-              </td>
-
-              <td>
-                B. Inggris
-              </td>
-
-              <td>
-                Basis Data
-              </td>
-
-              <td>
-                Matematika
-              </td>
-
-              <td>
-                Kerohanian
-              </td>
-
-            </tr>
-
-
-            <tr>
-
-              <td>
-                10.15–11.45
-              </td>
-
-              <td>
-                PKK
-              </td>
-
-              <td>
-                Pemrograman Web
-              </td>
-
-              <td>
-                PKn
-              </td>
-
-              <td>
-                B. Indonesia
-              </td>
-
-              <td>
-                Proyek Kelas
-              </td>
-
-            </tr>
-
-
-            <tr>
-
-              <td>
-                13.00–14.30
-              </td>
-
-              <td>
-                Basis Data
-              </td>
-
-              <td>
-                PKK
-              </td>
-
-              <td>
-                Pemrograman Web
-              </td>
-
-              <td>
-                Seni Budaya
-              </td>
-
-              <td>
-                —
-              </td>
-
-            </tr>
-
-
-            <tr>
-
-              <td>
-                14.30–15.30
-              </td>
-
-              <td>
-                Bimbingan Konseling
-              </td>
-
-              <td>
-                Ekstrakurikuler
-              </td>
-
-              <td>
-                Basis Data
-              </td>
-
-              <td>
-                PKK
-              </td>
-
-              <td>
-                —
-              </td>
-
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
-
-      <div class="jadwal-note">
-
-        * Jadwal dapat berubah menyesuaikan kalender akademik sekolah.
-
-      </div>
-
     </div>
-
   </section>
 
 
@@ -2186,9 +1857,7 @@
        KABAR KELAS
   ===================================== -->
 
-  <section
-    id="pengumuman"
-    class="prestasi-section">
+  <section id="pengumuman" class="prestasi-section">
 
     <div class="wrap">
 
@@ -2268,9 +1937,7 @@
 
           <div class="prestasi-photo">
 
-            <img
-              src="foto prestasi alwan (1).jpeg"
-              alt="Foto Prestasi 1">
+            <img src="foto prestasi alwan (1).jpeg" alt="Foto Prestasi 1">
 
           </div>
 
@@ -2296,9 +1963,7 @@
 
           <div class="prestasi-photo">
 
-            <img
-              src="Prestasi 2.jpg"
-              alt="Foto Prestasi 2">
+            <img src="Prestasi 2.jpg" alt="Foto Prestasi 2">
 
           </div>
 
@@ -2324,9 +1989,7 @@
 
           <div class="prestasi-photo">
 
-            <img
-              src="Prestasi 3.jpg"
-              alt="Foto Prestasi 3">
+            <img src="Prestasi 3.jpg" alt="Foto Prestasi 3">
 
           </div>
 
@@ -2345,44 +2008,14 @@
         </div>
 
 
-        
+
         <!-- PRESTASI 4 -->
 
         <div class="prestasi-card">
 
           <div class="prestasi-photo">
 
-            <img
-              src="Prestasi 4.jpg"
-              alt="Foto Prestasi 4">
-
-          </div>
-
-          <div class="prestasi-info">
-
-            <div class="prestasi-year">
-              2025
-            </div>
-
-            <h3>
-              Nama lomba / pencapaian kelas.
-            </h3>
-
-          </div>
-
-        </div>
-
-
-        
-         <!-- PRESTASI 5 -->
-
-        <div class="prestasi-card">
-
-          <div class="prestasi-photo">
-
-            <img
-              src="Prestasi 5.jpg"
-              alt="Foto Prestasi 5 ">
+            <img src="Prestasi 4.jpg" alt="Foto Prestasi 4">
 
           </div>
 
@@ -2402,15 +2035,39 @@
 
 
 
-         <!-- PRESTASI 6 -->
+        <!-- PRESTASI 5 -->
 
         <div class="prestasi-card">
 
           <div class="prestasi-photo">
 
-            <img
-              src="Prestasi 6.jpg"
-              alt="Foto Prestasi 6">
+            <img src="Prestasi 5.jpg" alt="Foto Prestasi 5 ">
+
+          </div>
+
+          <div class="prestasi-info">
+
+            <div class="prestasi-year">
+              2025
+            </div>
+
+            <h3>
+              Nama lomba / pencapaian kelas.
+            </h3>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PRESTASI 6 -->
+
+        <div class="prestasi-card">
+
+          <div class="prestasi-photo">
+
+            <img src="Prestasi 6.jpg" alt="Foto Prestasi 6">
 
           </div>
 
