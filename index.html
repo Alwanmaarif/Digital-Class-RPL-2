@@ -808,19 +808,14 @@
     ===================================== */
 
     @media (max-width: 600px) {
-
-      html,
-      body {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
+      .hero {
+        min-height: calc(100svh - 70px);
+        background-size: cover;
+        background-position: center 65%;
       }
 
-      .wrap {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 16px;
-        padding-right: 16px;
+      .hero .wrap {
+        min-height: calc(100svh - 70px);
       }
 
 
@@ -1764,7 +1759,7 @@
       <center>
         <h1>Jadwal Pelajaran</h1>
       </center>
-        
+
       <div class="jadwal-image">
         <img src="jadwal pelajaran.jpeg" alt="Jadwal Pelajaran Kelas 12 RPL 2">
       </div>
