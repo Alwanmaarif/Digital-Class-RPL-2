@@ -332,6 +332,211 @@
     }
 
 
+    /* DATA SISWA */
+    .stat-students {
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .stat-students:hover,
+    .stat-students:focus-visible {
+      transform: translateY(-4px);
+      outline: none;
+    }
+
+
+    .stat-walas,
+    #studentStatCard {
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .stat-walas:hover,
+    .stat-walas:focus-visible,
+    #studentStatCard:hover,
+    #studentStatCard:focus-visible {
+      transform: translateY(-4px);
+      outline: none;
+    }
+
+    /* Efek saat kotak ditekan */
+    .stat-walas:active,
+    #studentStatCard:active {
+      transform: translateY(-1px) scale(.98);
+      box-shadow: 0 8px 20px rgba(0,0,0,.16);
+    }
+
+    .wali-profile {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background: #f8fafc;
+      border-radius: 16px;
+    }
+
+    .wali-profile img {
+      width: 86px;
+      height: 86px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 5px 16px rgba(0,0,0,.12);
+      flex-shrink: 0;
+    }
+
+    .wali-profile h3 {
+      margin: 0 0 5px;
+      font-size: 20px;
+    }
+
+    .wali-profile p {
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    .student-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 18, 38, .72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 9999;
+    }
+
+    .student-modal.show {
+      display: flex;
+    }
+
+    .student-modal-box {
+      width: min(720px, 100%);
+      max-height: 85vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.25);
+    }
+
+    .student-modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .student-modal-head h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .student-close {
+      border: 0;
+      background: #f1f3f7;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .student-search {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px;
+      border: 1px solid #d9dee8;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      font: inherit;
+    }
+
+    .student-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .student-item {
+      border: 1px solid #e4e8ef;
+      background: #f8fafc;
+      border-radius: 13px;
+      padding: 13px 14px;
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      transition: .2s ease;
+    }
+
+    .student-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,.08);
+    }
+
+    .student-number {
+      display: inline-block;
+      width: 24px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .student-detail {
+      display: none;
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 15px;
+      background: #f5f7fb;
+    }
+
+    .student-detail.show {
+      display: block;
+    }
+
+    .student-detail h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .student-data-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 8px 0;
+      border-bottom: 1px solid #e2e6ed;
+    }
+
+    .student-data-row:last-child {
+      border-bottom: 0;
+    }
+
+    .student-data-row span:first-child {
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      .student-modal {
+        padding: 10px;
+      }
+
+      .student-modal-box {
+        padding: 18px;
+        border-radius: 18px;
+        max-height: 90vh;
+      }
+
+      .student-list {
+        grid-template-columns: 1fr;
+      }
+
+      .student-modal-head h2 {
+        font-size: 20px;
+      }
+    }
+
+
     /* =====================================
        SECTION
     ===================================== */
@@ -995,29 +1200,19 @@
 
       .id-card {
         width: 135px;
-        min-width: 0;
         padding: 10px;
         border-radius: 14px;
-        box-sizing: border-box;
-        overflow: hidden;
       }
 
       .id-photo {
-        width: 100%;
         border-radius: 9px;
         margin-bottom: 9px;
-        display: block;
-        object-fit: cover;
       }
 
       .id-card b {
-        font-size: 11px;
-        display: block;
-        white-space: normal;
-        overflow-wrap: break-word;
-        word-break: normal;
-        line-height: 1.3;
+        font-size: 12px;
       }
+
 
       /* JADWAL */
 
@@ -1405,14 +1600,14 @@
 
     <div class="wrap">
 
-      <div class="stat-card card">
+      <div class="stat-card card" id="studentStatCard" role="button" tabindex="0" aria-label="Lihat data 36 Taruna/i">
 
         <div class="icon">
           👥
         </div>
 
         <div class="big">
-          35
+          36
         </div>
 
         <div class="small">
@@ -1422,7 +1617,7 @@
       </div>
 
 
-      <div class="stat-card card">
+      <div class="stat-card card stat-walas" id="waliStatCard" role="button" tabindex="0" aria-label="Lihat data Wali Kelas">
 
         <div class="icon">
           🧑
@@ -1626,7 +1821,7 @@
       <div class="struktur-grid">
 
 
-        <!-- Wali Kelas -->
+        <!-- KETUA -->
 
         <div class="struktur-row">
 
@@ -1658,7 +1853,7 @@
             <img class="id-photo" src="Ketua kelas.jpeg" alt="Foto Wakil Ketua">
 
             <b>
-              Alwan Ma'Arif
+               Alwan Ma'Arif 
             </b>
 
             <div class="small" style="font-size:12px;color:var(--text-muted);">
@@ -2123,11 +2318,201 @@
 
 
 
+
+  <!-- =====================================
+       DATA SISWA
+  ===================================== -->
+  <div class="student-modal" id="studentModal" aria-hidden="true">
+    <div class="student-modal-box" role="dialog" aria-modal="true" aria-labelledby="studentModalTitle">
+      <div class="student-modal-head">
+        <h2 id="studentModalTitle">Data Taruna/i 12 RPL 2</h2>
+        <button class="student-close" id="studentClose" type="button" aria-label="Tutup">&times;</button>
+      </div>
+
+      <input class="student-search" id="studentSearch" type="search" placeholder="Cari nama siswa...">
+      <div class="student-list" id="studentList"></div>
+
+      <div class="student-detail" id="studentDetail">
+        <h3 id="detailName"></h3>
+        <div class="student-data-row"><span>Kelas</span><strong>12 RPL 2</strong></div>
+        <div class="student-data-row"><span>Jurusan</span><strong>Rekayasa Perangkat Lunak</strong></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =====================================
+       DATA WALI KELAS
+  ===================================== -->
+  <div class="student-modal" id="waliModal" aria-hidden="true">
+    <div class="student-modal-box" role="dialog" aria-modal="true" aria-labelledby="waliModalTitle">
+      <div class="student-modal-head">
+        <h2 id="waliModalTitle">Data Wali Kelas</h2>
+        <button class="student-close" id="waliClose" type="button" aria-label="Tutup">&times;</button>
+      </div>
+
+      <div class="wali-profile">
+        <img src="wali kelas.jpg" alt="Foto Wali Kelas">
+        <div>
+          <h3>Agatha Fery Setyaningsih</h3>
+          <p>Wali Kelas 12 RPL 2</p>
+        </div>
+      </div>
+
+      <div class="student-detail show">
+        <div class="student-data-row"><span>Nama</span><strong>Agatha Fery Setyaningsih</strong></div>
+        <div class="student-data-row"><span>Jabatan</span><strong>Wali Kelas</strong></div>
+        <div class="student-data-row"><span>Kelas</span><strong>12 RPL 2</strong></div>
+        <div class="student-data-row"><span>Sekolah</span><strong>SMKN 12 Kabupaten Tangerang</strong></div>
+        <div class="student-data-row"><span>Jurusan</span><strong>Rekayasa Perangkat Lunak</strong></div>
+      </div>
+    </div>
+  </div>
+
   <!-- =====================================
        JAVASCRIPT
   ===================================== -->
 
   <script>
+
+    /* =========================
+       DATA TARUNA/I
+    ========================= */
+
+    const students = [
+      "Ahmad Dzikri",
+      "Ahmad Falah",
+      "Almira Rohiba",
+      "Alwan Ma Arif",
+      "Aulia Nur Azizah",
+      "Ayu Siti Maesyaroh",
+      "Azzam Alauddin Rantisi",
+      "Edward Simanjuntak",
+      "Falsa Legiyana",
+      "Fathir Riyatno",
+      "Fika Auliani Putri",
+      "Hadi Azka Tanjung",
+      "Hilman Fikry Alvaro",
+      "Indy Aulia",
+      "Melawati",
+      "Mochamad Fadly",
+      "M Fathirsyah",
+      "M Dafi",
+      "M Denis",
+      "M Arrafi",
+      "Nurul Anggraeni",
+      "Pola Citra Pardosi",
+      "Putri Rahmadiani",
+      "Rafa Arelian",
+      "Raihan Junianto",
+      "Reza Aditya",
+      "Rifa Lutfiah",
+      "Rifan Ariando",
+      "Rifki Sebastian",
+      "Sekar Aryadwitami",
+      "Septian Hilal",
+      "Silviyana Safitri",
+      "Siti Nurhikmah",
+      "Siti Nurmala",
+      "Virda Maulida",
+      "Windi Almadiani"
+    ];
+
+    const studentStatCard = document.getElementById("studentStatCard");
+    const studentModal = document.getElementById("studentModal");
+    const studentClose = document.getElementById("studentClose");
+    const studentSearch = document.getElementById("studentSearch");
+    const studentList = document.getElementById("studentList");
+    const studentDetail = document.getElementById("studentDetail");
+    const detailName = document.getElementById("detailName");
+
+    function renderStudents(keyword = "") {
+      const filtered = students.filter(name =>
+        name.toLowerCase().includes(keyword.toLowerCase())
+      );
+
+      studentList.innerHTML = filtered.map(name => {
+        const index = students.indexOf(name) + 1;
+        return `
+          <button class="student-item" type="button" data-name="${name}">
+            <span class="student-number">${index}.</span>${name}
+          </button>
+        `;
+      }).join("");
+
+      studentList.querySelectorAll(".student-item").forEach(item => {
+        item.addEventListener("click", () => {
+          detailName.textContent = item.dataset.name;
+          studentDetail.classList.add("show");
+        });
+      });
+    }
+
+    function openStudentModal() {
+      studentModal.classList.add("show");
+      studentModal.setAttribute("aria-hidden", "false");
+      studentSearch.value = "";
+      studentDetail.classList.remove("show");
+      renderStudents();
+      setTimeout(() => studentSearch.focus(), 50);
+    }
+
+    function closeStudentModal() {
+      studentModal.classList.remove("show");
+      studentModal.setAttribute("aria-hidden", "true");
+    }
+
+    studentStatCard.addEventListener("click", openStudentModal);
+    studentStatCard.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openStudentModal();
+      }
+    });
+
+    studentClose.addEventListener("click", closeStudentModal);
+    studentModal.addEventListener("click", e => {
+      if (e.target === studentModal) closeStudentModal();
+    });
+
+    // DATA WALI KELAS
+    const waliStatCard = document.getElementById("waliStatCard");
+    const waliModal = document.getElementById("waliModal");
+    const waliClose = document.getElementById("waliClose");
+
+    function openWaliModal() {
+      waliModal.classList.add("show");
+      waliModal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeWaliModal() {
+      waliModal.classList.remove("show");
+      waliModal.setAttribute("aria-hidden", "true");
+    }
+
+    waliStatCard.addEventListener("click", openWaliModal);
+    waliStatCard.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openWaliModal();
+      }
+    });
+
+    waliClose.addEventListener("click", closeWaliModal);
+    waliModal.addEventListener("click", e => {
+      if (e.target === waliModal) closeWaliModal();
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && studentModal.classList.contains("show")) {
+        closeStudentModal();
+      }
+    });
+
+    studentSearch.addEventListener("input", () => {
+      renderStudents(studentSearch.value);
+    });
+
 
     /* =========================
        NAVBAR MOBILE
@@ -2285,7 +2670,5 @@
     });
 
   </script>
-
 </body>
-
 </html>
